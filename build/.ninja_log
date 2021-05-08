@@ -1,0 +1,20 @@
+# ninja log v5
+1	70	1620496410860000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/xkb_unicode.c.o	a1bc8cd2a9e06a93
+2	73	1620496410850000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/posix_time.c.o	ae91ef8a2ffb3433
+1	73	1620496410860000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/vulkan.c.o	8365f23db9c3b045
+2	75	1620496410860000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/posix_thread.c.o	2372e2afc6039511
+2	90	1620496410870000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/osmesa_context.c.o	9a27f658201945bc
+0	91	1620496410880000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/init.c.o	7c4a38b457763bbd
+0	95	1620496410880000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/context.c.o	98d9f61d27675780
+3	99	1620496410890000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/linux_joystick.c.o	7b06e388f08a80f7
+2	102	1620496410890000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/egl_context.c.o	300c6b7c8c7d5900
+1	105	1620496410890000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_monitor.c.o	260bea821e534b53
+0	106	1620496410890000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/monitor.c.o	6e0847ed09df4e00
+2	113	1620496410900000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/glx_context.c.o	b12387ca157c8d0f
+1	125	1620496410910000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/window.c.o	7fc06de7f6aebdeb
+1	131	1620496410920000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_init.c.o	a460f1683b6c9014
+0	137	1620496410930000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/input.c.o	c4b551a7b048b2ed
+1	187	1620496410980000000	/home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_window.c.o	a52013b5989df715
+187	198	1620496410990000000	/home/adarsh/projects/glfw/build/src/libglfw3.a	a073cb29f451830c
+0	314	1620496411100000000	CMakeFiles/test.dir/test.cpp.o	187f759c59192e8b
+314	520	1620496411310000000	test	73e71415b4ac5776
