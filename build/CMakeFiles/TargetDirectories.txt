@@ -1,10 +1,10 @@
 /home/adarsh/projects/game_test/build/CMakeFiles/install/strip.dir
-/home/adarsh/projects/game_test/build/CMakeFiles/install/local.dir
 /home/adarsh/projects/game_test/build/CMakeFiles/install.dir
 /home/adarsh/projects/game_test/build/CMakeFiles/list_install_components.dir
 /home/adarsh/projects/game_test/build/CMakeFiles/rebuild_cache.dir
 /home/adarsh/projects/game_test/build/CMakeFiles/edit_cache.dir
-/home/adarsh/projects/game_test/build/CMakeFiles/test.dir
+/home/adarsh/projects/game_test/build/CMakeFiles/install/local.dir
+/home/adarsh/projects/game_test/build/CMakeFiles/lucidity.dir
 /home/adarsh/projects/glfw/build/CMakeFiles/install/strip.dir
 /home/adarsh/projects/glfw/build/CMakeFiles/install/local.dir
 /home/adarsh/projects/glfw/build/CMakeFiles/install.dir
@@ -19,3 +19,10 @@
 /home/adarsh/projects/glfw/build/src/CMakeFiles/edit_cache.dir
 /home/adarsh/projects/glfw/build/src/CMakeFiles/install/local.dir
 /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
+/home/adarsh/projects/game_test/lib/build/CMakeFiles/install/strip.dir
+/home/adarsh/projects/game_test/lib/build/CMakeFiles/install/local.dir
+/home/adarsh/projects/game_test/lib/build/CMakeFiles/install.dir
+/home/adarsh/projects/game_test/lib/build/CMakeFiles/list_install_components.dir
+/home/adarsh/projects/game_test/lib/build/CMakeFiles/rebuild_cache.dir
+/home/adarsh/projects/game_test/lib/build/CMakeFiles/edit_cache.dir
+/home/adarsh/projects/game_test/lib/build/CMakeFiles/glad.dir
