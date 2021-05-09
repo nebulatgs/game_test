@@ -1,22 +1,22 @@
-#include "headers/sprite.hpp"
+#include "headers/map.hpp"
 #include "headers/game.hpp"
 
-Sprite::Sprite(int width, int height, int mapIndex, Game *game, Shader shader) : mapIndex(mapIndex), shader(shader), width(width), height(height)
+Map::Map(int width, int height, int mapIndex, Game *game, Shader shader) : mapIndex(mapIndex), shader(shader), width(width), height(height)
 {
 	initBuffers();
 	this->game = game;
-	textureAtlas = 1;
+	textureAtlas = 0;
 }
 
-Sprite::Sprite(int width, int height, int mapIndex, Game *game, const char *vertexPath, const char *fragmentPath) : mapIndex(mapIndex), width(width), height(height)
+Map::Map(int width, int height, int mapIndex, Game *game, const char *vertexPath, const char *fragmentPath) : mapIndex(mapIndex), width(width), height(height)
 {
 	initBuffers();
 	this->game = game;
 	shader.Compile(vertexPath, fragmentPath);
-	textureAtlas = 1;
+	textureAtlas = 0;
 }
 
-void Sprite::initBuffers()
+void Map::initBuffers()
 {
 	float vertices[] = {
 		-1.0f, -1.0f, 0.0f,
@@ -43,28 +43,25 @@ void Sprite::initBuffers()
 	glEnableVertexAttribArray(0);
 }
 
-void Sprite::setTransform(glm::mat4 transform)
+void Map::setTransform(glm::mat4 transform)
 {
 	transform = glm::scale(transform, glm::vec3((static_cast<float>(width) / static_cast<float>(game->width)), (static_cast<float>(height) / static_cast<float>(game->height)), 1));
-	transform = glm::scale(transform, glm::vec3(0.05, 0.05, 1));
 	this->transform = transform;
 }
 
-void Sprite::setTextureAtlas(GLuint atlasID)
+void Map::setTextureAtlas(GLuint atlasID)
 {
 	textureAtlas = atlasID;
 }
 
-void Sprite::update()
+void Map::update()
 {
 	shader.SetMatrix4("transform", transform, true);
 	shader.SetInteger("tex", textureAtlas);
-	shader.SetVector2f("tile", {2.0, 1.0});
 }
 
-void Sprite::render()
+void Map::render()
 {
-	// glActiveTexture(GL_TEXTURE0 + textureAtlas);
 	glBindVertexArray(VAO);
 	shader.Use();
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);

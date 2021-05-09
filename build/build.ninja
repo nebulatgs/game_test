@@ -152,6 +152,13 @@ build CMakeFiles/lucidity.dir/src/sprite.cpp.o: CXX_COMPILER__lucidity ../src/sp
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
+build CMakeFiles/lucidity.dir/src/map.cpp.o: CXX_COMPILER__lucidity ../src/map.cpp || cmake_object_order_depends_target_lucidity
+  DEP_FILE = CMakeFiles/lucidity.dir/src/map.cpp.o.d
+  FLAGS = -g   -std=gnu++17
+  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
+  OBJECT_DIR = CMakeFiles/lucidity.dir
+  OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lucidity
@@ -160,7 +167,7 @@ build CMakeFiles/lucidity.dir/src/sprite.cpp.o: CXX_COMPILER__lucidity ../src/sp
 #############################################
 # Link the executable lucidity
 
-build lucidity: CXX_EXECUTABLE_LINKER__lucidity CMakeFiles/lucidity.dir/src/lucidity.cpp.o CMakeFiles/lucidity.dir/src/shader.cpp.o CMakeFiles/lucidity.dir/src/game.cpp.o CMakeFiles/lucidity.dir/src/globals.cpp.o CMakeFiles/lucidity.dir/src/stb_image.cpp.o CMakeFiles/lucidity.dir/src/camera.cpp.o CMakeFiles/lucidity.dir/src/sprite.cpp.o | /home/adarsh/projects/glfw/build/src/libglfw3.a ../lib/build/libglad.a /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libm.so || ../lib/build/libglad.a /home/adarsh/projects/glfw/build/src/libglfw3.a
+build lucidity: CXX_EXECUTABLE_LINKER__lucidity CMakeFiles/lucidity.dir/src/lucidity.cpp.o CMakeFiles/lucidity.dir/src/shader.cpp.o CMakeFiles/lucidity.dir/src/game.cpp.o CMakeFiles/lucidity.dir/src/globals.cpp.o CMakeFiles/lucidity.dir/src/stb_image.cpp.o CMakeFiles/lucidity.dir/src/camera.cpp.o CMakeFiles/lucidity.dir/src/sprite.cpp.o CMakeFiles/lucidity.dir/src/map.cpp.o | /home/adarsh/projects/glfw/build/src/libglfw3.a ../lib/build/libglad.a /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libm.so || ../lib/build/libglad.a /home/adarsh/projects/glfw/build/src/libglfw3.a
   FLAGS = -g
   LINK_LIBRARIES = /home/adarsh/projects/glfw/build/src/libglfw3.a  ../lib/build/libglad.a  -lpthread  /usr/lib/x86_64-linux-gnu/librt.so  -lm  -ldl
   OBJECT_DIR = CMakeFiles/lucidity.dir

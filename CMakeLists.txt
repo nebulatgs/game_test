@@ -11,7 +11,8 @@ add_executable(lucidity
 			   src/globals.cpp
 			   src/stb_image.cpp
 			   src/camera.cpp
-			   src/sprite.cpp)
+			   src/sprite.cpp
+			   src/map.cpp)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)

@@ -8,7 +8,6 @@
 #include "shader.hpp"
 #include "camera.hpp"
 #include "sceneobject.hpp"
-// typedef glm::mat4 Camera;
 
 
 class Game
@@ -32,10 +31,15 @@ public:
 	int height;
 
 	GLuint spriteSheet;
+	GLuint player;
 	Camera camera;
+
+private:
+	GLuint loadTexture(GLubyte *data, int imgWidth, int imgHeight);
 
 private:
 	GLFWwindow *window;
 	double lastTime = 0.0;
+	int textureCount = 0;
 	std::vector<std::shared_ptr<SceneObject>> renderObjects;
 };
