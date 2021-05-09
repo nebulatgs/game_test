@@ -31,6 +31,12 @@
 
 {
   "directory": "/home/adarsh/projects/game_test/build",
+  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/camera.cpp.o -c /home/adarsh/projects/game_test/src/camera.cpp",
+  "file": "/home/adarsh/projects/game_test/src/camera.cpp"
+},
+
+{
+  "directory": "/home/adarsh/projects/game_test/build",
   "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/context.c.o   -c /home/adarsh/projects/glfw/src/context.c",
   "file": "/home/adarsh/projects/glfw/src/context.c"
 },

@@ -5,7 +5,8 @@
 
 #include "gl.hpp"
 #include "shader.hpp"
-
+#include "camera.hpp"
+// typedef glm::mat4 Camera;
 
 
 class Renderer
@@ -31,6 +32,8 @@ public:
 	Shader tileShader;
 	Shader spriteShader;
 	std::vector<GLuint> VAOs;
+	GLuint texture;
+	Camera camera;
 
 private:
 	GLFWwindow *window;
