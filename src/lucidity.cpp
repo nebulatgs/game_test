@@ -2,7 +2,7 @@
 
 #include "headers/gl.hpp"
 #include "headers/globals.hpp"
-#include "headers/renderer.hpp"
+#include "headers/game.hpp"
 
 void error_callback(int error, const char *description)
 {
@@ -11,12 +11,12 @@ void error_callback(int error, const char *description)
 
 int main()
 {
-	renderer = new Renderer(640, 480, "Lucidity");
+	game = new Game(640, 480, "Lucidity");
 	glfwSetErrorCallback(error_callback);
 	
-	while (!renderer->closed())
+	while (!game->closed())
 	{
-		renderer->tick();
+		game->tick();
 	}
 	glfwTerminate();
 	exit(EXIT_SUCCESS);

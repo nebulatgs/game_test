@@ -13,8 +13,8 @@
 
 {
   "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/renderer.cpp.o -c /home/adarsh/projects/game_test/src/renderer.cpp",
-  "file": "/home/adarsh/projects/game_test/src/renderer.cpp"
+  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/game.cpp.o -c /home/adarsh/projects/game_test/src/game.cpp",
+  "file": "/home/adarsh/projects/game_test/src/game.cpp"
 },
 
 {
@@ -33,6 +33,12 @@
   "directory": "/home/adarsh/projects/game_test/build",
   "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/camera.cpp.o -c /home/adarsh/projects/game_test/src/camera.cpp",
   "file": "/home/adarsh/projects/game_test/src/camera.cpp"
+},
+
+{
+  "directory": "/home/adarsh/projects/game_test/build",
+  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/sprite.cpp.o -c /home/adarsh/projects/game_test/src/sprite.cpp",
+  "file": "/home/adarsh/projects/game_test/src/sprite.cpp"
 },
 
 {

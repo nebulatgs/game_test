@@ -2,40 +2,40 @@
 
 #include <string>
 #include <vector>
+#include <memory>
 
 #include "gl.hpp"
 #include "shader.hpp"
 #include "camera.hpp"
+#include "sceneobject.hpp"
 // typedef glm::mat4 Camera;
 
 
-class Renderer
+class Game
 {
 
 public:
-	Renderer(int width, int height, std::string title);
+	Game(int width, int height, std::string title);
 
 public:
-	GLuint loadShaders(const char * vertex_file_path,const char * fragment_file_path);
 	void init(int width, int height, std::string title);
 	void tick();
 
 	void draw();
 	void update();
 	void input();
-	// double time();
+
 	bool closed();
 
 public:
 	int width;
 	int height;
-	Shader tileShader;
-	Shader spriteShader;
-	std::vector<GLuint> VAOs;
-	GLuint texture;
+
+	GLuint spriteSheet;
 	Camera camera;
 
 private:
 	GLFWwindow *window;
 	double lastTime = 0.0;
+	std::vector<std::shared_ptr<SceneObject>> renderObjects;
 };

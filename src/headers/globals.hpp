@@ -4,6 +4,6 @@
 #include "stb_image.h"
 // #include "camera.hpp"
 
-// #include "renderer.hpp"
-class Renderer;
-extern Renderer *renderer;
+// #include "game.hpp"
+class Game;
+extern Game *game;

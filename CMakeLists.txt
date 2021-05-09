@@ -7,10 +7,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(lucidity 
 			   src/lucidity.cpp 
 			   src/shader.cpp 
-			   src/renderer.cpp 
+			   src/game.cpp 
 			   src/globals.cpp
 			   src/stb_image.cpp
-			   src/camera.cpp)
+			   src/camera.cpp
+			   src/sprite.cpp)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
