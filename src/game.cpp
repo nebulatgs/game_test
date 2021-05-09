@@ -7,7 +7,7 @@ void key_callback(GLFWwindow *window, int key, int scancode, int action, int mod
 {
 	if (key == GLFW_KEY_LEFT && (action == GLFW_REPEAT || action == GLFW_PRESS))
 		game->camera.move(glm::vec2(0.01, 0.0));
-		
+
 	if (key == GLFW_KEY_RIGHT && (action == GLFW_REPEAT || action == GLFW_PRESS))
 		game->camera.move(glm::vec2(-0.01, 0.0));
 }
@@ -45,16 +45,23 @@ void Game::init(int width, int height, std::string title)
 	glOrtho(0, this->width, this->height, 0, 1, -1);
 
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-	renderObjects.push_back(std::make_shared<Sprite>(0, "../shaders/triangle.vert", "../shaders/triangle.frag"));
+	
 
 	int imgWidth, imgHeight, nrChannels;
-	GLubyte *data = stbi_load("../src/images/test.jpg", &imgWidth, &imgHeight, &nrChannels, 0);
+	stbi_set_flip_vertically_on_load(true);
+	GLubyte *data = stbi_load("../src/images/tilemap.png", &imgWidth, &imgHeight, &nrChannels, 0);
 	glGenTextures(1, &spriteSheet);
 	glBindTexture(GL_TEXTURE_2D, spriteSheet);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgWidth, imgHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-	glGenerateMipmap(GL_TEXTURE_2D);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imgWidth, imgHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	// glGenerateMipmap(GL_TEXTURE_2D);
 	stbi_image_free(data);
-
+	std::shared_ptr sprite = std::make_shared<Sprite>(imgWidth, imgHeight, 0, this, "../shaders/tilemap.vert", "../shaders/tilemap.frag");
+	// glm::mat4 scaleTrans = glm::scale(camera.getTransform(), glm::vec3(2));
+	renderObjects.push_back(sprite);
 	printf("OpenGL version: %s\n", glGetString(GL_VERSION));
 	glfwSwapInterval(1);
 }
@@ -74,7 +81,8 @@ void Game::draw()
 
 	for (auto &&i : renderObjects)
 	{
-		i->setTransform(camera.getTransform());
+		glm::mat4 scaleTrans = glm::scale(camera.getTransform(), glm::vec3(40, 40, 1));
+		i->setTransform(scaleTrans);
 		i->setTextureAtlas(0);
 		i->update();
 		i->render();

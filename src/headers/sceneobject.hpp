@@ -1,5 +1,5 @@
 #pragma once
-
+class Game;
 class SceneObject
 {
 public:
@@ -11,4 +11,5 @@ public:
 protected:
 	glm::mat4 transform = glm::mat4(1.0f);
 	GLuint textureAtlas;
+	Game* game;
 };

@@ -11,7 +11,7 @@ void error_callback(int error, const char *description)
 
 int main()
 {
-	game = new Game(640, 480, "Lucidity");
+	game = new Game(1280, 720, "Lucidity");
 	glfwSetErrorCallback(error_callback);
 	
 	while (!game->closed())

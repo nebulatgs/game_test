@@ -1,13 +1,16 @@
 #include "headers/sprite.hpp"
+#include "headers/game.hpp"
 
-Sprite::Sprite(int mapIndex, Shader shader) : mapIndex(mapIndex), shader(shader)
+Sprite::Sprite(int width, int height, int mapIndex, Game *game, Shader shader) : mapIndex(mapIndex), shader(shader), width(width), height(height)
 {
 	initBuffers();
+	this->game = game;
 }
 
-Sprite::Sprite(int mapIndex, const char *vertexPath, const char *fragmentPath) : mapIndex(mapIndex)
+Sprite::Sprite(int width, int height, int mapIndex, Game *game, const char *vertexPath, const char *fragmentPath) : mapIndex(mapIndex), width(width), height(height)
 {
 	initBuffers();
+	this->game = game;
 	shader.Compile(vertexPath, fragmentPath);
 }
 
@@ -42,6 +45,7 @@ void Sprite::initBuffers()
 
 void Sprite::setTransform(glm::mat4 transform)
 {
+	transform = glm::scale(transform, glm::vec3((static_cast<float>(width) / static_cast<float>(game->width)), (static_cast<float>(height) / static_cast<float>(game->height)), 1));
 	this->transform = transform;
 }
 

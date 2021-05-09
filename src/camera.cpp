@@ -25,5 +25,5 @@ void Camera::move(glm::vec2 motion)
 
 glm::mat4 Camera::getTransform()
 {
-	return glm::scale(transform, glm::vec3(10, 1, 0));
+	return glm::scale(transform, glm::vec3(1, 1, 0));
 }
