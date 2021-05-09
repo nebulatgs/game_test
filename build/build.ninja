@@ -106,28 +106,35 @@ build cmake_object_order_depends_target_lucidity: phony || cmake_object_order_de
 build CMakeFiles/lucidity.dir/src/lucidity.cpp.o: CXX_COMPILER__lucidity ../src/lucidity.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/lucidity.cpp.o.d
   FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I/home/adarsh/projects/glfw/include
+  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
 build CMakeFiles/lucidity.dir/src/shader.cpp.o: CXX_COMPILER__lucidity ../src/shader.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/shader.cpp.o.d
   FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I/home/adarsh/projects/glfw/include
+  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
 build CMakeFiles/lucidity.dir/src/renderer.cpp.o: CXX_COMPILER__lucidity ../src/renderer.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/renderer.cpp.o.d
   FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I/home/adarsh/projects/glfw/include
+  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
 build CMakeFiles/lucidity.dir/src/globals.cpp.o: CXX_COMPILER__lucidity ../src/globals.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/globals.cpp.o.d
   FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I/home/adarsh/projects/glfw/include
+  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
+  OBJECT_DIR = CMakeFiles/lucidity.dir
+  OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
+
+build CMakeFiles/lucidity.dir/src/stb_image.cpp.o: CXX_COMPILER__lucidity ../src/stb_image.cpp || cmake_object_order_depends_target_lucidity
+  DEP_FILE = CMakeFiles/lucidity.dir/src/stb_image.cpp.o.d
+  FLAGS = -g   -std=gnu++17
+  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
@@ -139,7 +146,7 @@ build CMakeFiles/lucidity.dir/src/globals.cpp.o: CXX_COMPILER__lucidity ../src/g
 #############################################
 # Link the executable lucidity
 
-build lucidity: CXX_EXECUTABLE_LINKER__lucidity CMakeFiles/lucidity.dir/src/lucidity.cpp.o CMakeFiles/lucidity.dir/src/shader.cpp.o CMakeFiles/lucidity.dir/src/renderer.cpp.o CMakeFiles/lucidity.dir/src/globals.cpp.o | /home/adarsh/projects/glfw/build/src/libglfw3.a ../lib/build/libglad.a /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libm.so || ../lib/build/libglad.a /home/adarsh/projects/glfw/build/src/libglfw3.a
+build lucidity: CXX_EXECUTABLE_LINKER__lucidity CMakeFiles/lucidity.dir/src/lucidity.cpp.o CMakeFiles/lucidity.dir/src/shader.cpp.o CMakeFiles/lucidity.dir/src/renderer.cpp.o CMakeFiles/lucidity.dir/src/globals.cpp.o CMakeFiles/lucidity.dir/src/stb_image.cpp.o | /home/adarsh/projects/glfw/build/src/libglfw3.a ../lib/build/libglad.a /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libm.so || ../lib/build/libglad.a /home/adarsh/projects/glfw/build/src/libglfw3.a
   FLAGS = -g
   LINK_LIBRARIES = /home/adarsh/projects/glfw/build/src/libglfw3.a  ../lib/build/libglad.a  -lpthread  /usr/lib/x86_64-linux-gnu/librt.so  -lm  -ldl
   OBJECT_DIR = CMakeFiles/lucidity.dir
@@ -536,7 +543,7 @@ build cmake_object_order_depends_target_glad: phony || ../lib/build/CMakeFiles/g
 build ../lib/build/CMakeFiles/glad.dir/src/glad.c.o: C_COMPILER__glad ../lib/src/glad.c || cmake_object_order_depends_target_glad
   DEP_FILE = ../lib/build/CMakeFiles/glad.dir/src/glad.c.o.d
   FLAGS = -g
-  INCLUDES = -I../lib/include
+  INCLUDES = -I../lib/include -I../lib/include/KHR
   OBJECT_DIR = ../lib/build/CMakeFiles/glad.dir
   OBJECT_FILE_DIR = ../lib/build/CMakeFiles/glad.dir/src
 
@@ -555,6 +562,146 @@ build ../lib/build/libglad.a: C_STATIC_LIBRARY_LINKER__glad ../lib/build/CMakeFi
   PRE_LINK = :
   TARGET_FILE = ../lib/build/libglad.a
   TARGET_PDB = glad.a.dbg
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/adarsh/projects/game_test/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for install/strip
+
+build ../lib/glm/build/CMakeFiles/install/strip.util: CUSTOM_COMMAND ../lib/glm/build/all
+  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build ../lib/glm/build/install/strip: phony ../lib/glm/build/CMakeFiles/install/strip.util
+
+
+#############################################
+# Utility command for install/local
+
+build ../lib/glm/build/CMakeFiles/install/local.util: CUSTOM_COMMAND ../lib/glm/build/all
+  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build ../lib/glm/build/install/local: phony ../lib/glm/build/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install
+
+build ../lib/glm/build/CMakeFiles/install.util: CUSTOM_COMMAND ../lib/glm/build/all
+  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build && /usr/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build ../lib/glm/build/install: phony ../lib/glm/build/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build ../lib/glm/build/list_install_components: phony
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build ../lib/glm/build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build && /usr/bin/cmake -S/home/adarsh/projects/game_test -B/home/adarsh/projects/game_test/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build ../lib/glm/build/rebuild_cache: phony ../lib/glm/build/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build ../lib/glm/build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build ../lib/glm/build/edit_cache: phony ../lib/glm/build/CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /home/adarsh/projects/game_test/lib/glm/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for install/local
+
+build ../lib/glm/build/glm/CMakeFiles/install/local.util: CUSTOM_COMMAND ../lib/glm/build/glm/all
+  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build/glm && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
+  pool = console
+  restat = 1
+
+build ../lib/glm/build/glm/install/local: phony ../lib/glm/build/glm/CMakeFiles/install/local.util
+
+
+#############################################
+# Utility command for install
+
+build ../lib/glm/build/glm/CMakeFiles/install.util: CUSTOM_COMMAND ../lib/glm/build/glm/all
+  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build/glm && /usr/bin/cmake -P cmake_install.cmake
+  DESC = Install the project...
+  pool = console
+  restat = 1
+
+build ../lib/glm/build/glm/install: phony ../lib/glm/build/glm/CMakeFiles/install.util
+
+
+#############################################
+# Utility command for list_install_components
+
+build ../lib/glm/build/glm/list_install_components: phony
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build ../lib/glm/build/glm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build/glm && /usr/bin/cmake -S/home/adarsh/projects/game_test -B/home/adarsh/projects/game_test/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build ../lib/glm/build/glm/rebuild_cache: phony ../lib/glm/build/glm/CMakeFiles/rebuild_cache.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build ../lib/glm/build/glm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build/glm && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build ../lib/glm/build/glm/edit_cache: phony ../lib/glm/build/glm/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for install/strip
+
+build ../lib/glm/build/glm/CMakeFiles/install/strip.util: CUSTOM_COMMAND ../lib/glm/build/glm/all
+  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build/glm && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build ../lib/glm/build/glm/install/strip: phony ../lib/glm/build/glm/CMakeFiles/install/strip.util
 
 # =============================================================================
 # Target aliases.
@@ -577,7 +724,7 @@ build uninstall: phony /home/adarsh/projects/glfw/build/uninstall
 #############################################
 # Folder: /home/adarsh/projects/game_test/build
 
-build all: phony lucidity /home/adarsh/projects/glfw/build/all ../lib/build/all
+build all: phony lucidity /home/adarsh/projects/glfw/build/all ../lib/build/all ../lib/glm/build/all
 
 # =============================================================================
 
@@ -585,6 +732,20 @@ build all: phony lucidity /home/adarsh/projects/glfw/build/all ../lib/build/all
 # Folder: /home/adarsh/projects/game_test/lib/build
 
 build ../lib/build/all: phony ../lib/build/libglad.a
+
+# =============================================================================
+
+#############################################
+# Folder: /home/adarsh/projects/game_test/lib/glm/build
+
+build ../lib/glm/build/all: phony ../lib/glm/build/glm/all
+
+# =============================================================================
+
+#############################################
+# Folder: /home/adarsh/projects/game_test/lib/glm/build/glm
+
+build ../lib/glm/build/glm/all: phony
 
 # =============================================================================
 
@@ -612,14 +773,14 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../lib/CMakeLists.txt /home/adarsh/projects/glfw/CMake/cmake_uninstall.cmake.in /home/adarsh/projects/glfw/CMake/glfw3.pc.in /home/adarsh/projects/glfw/CMake/glfw3Config.cmake.in /home/adarsh/projects/glfw/CMakeLists.txt /home/adarsh/projects/glfw/src/CMakeLists.txt /home/adarsh/projects/glfw/src/glfw_config.h.in /usr/share/cmake-3.16/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeDependentOption.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindFontconfig.cmake /usr/share/cmake-3.16/Modules/FindFreetype.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/FindX11.cmake /usr/share/cmake-3.16/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake /usr/share/cmake-3.16/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../lib/CMakeLists.txt ../lib/glm/CMakeLists.txt ../lib/glm/glm/CMakeLists.txt /home/adarsh/projects/glfw/CMake/cmake_uninstall.cmake.in /home/adarsh/projects/glfw/CMake/glfw3.pc.in /home/adarsh/projects/glfw/CMake/glfw3Config.cmake.in /home/adarsh/projects/glfw/CMakeLists.txt /home/adarsh/projects/glfw/src/CMakeLists.txt /home/adarsh/projects/glfw/src/glfw_config.h.in /usr/share/cmake-3.16/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeDependentOption.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindFontconfig.cmake /usr/share/cmake-3.16/Modules/FindFreetype.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/FindX11.cmake /usr/share/cmake-3.16/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake /usr/share/cmake-3.16/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../lib/CMakeLists.txt /home/adarsh/projects/glfw/CMake/cmake_uninstall.cmake.in /home/adarsh/projects/glfw/CMake/glfw3.pc.in /home/adarsh/projects/glfw/CMake/glfw3Config.cmake.in /home/adarsh/projects/glfw/CMakeLists.txt /home/adarsh/projects/glfw/src/CMakeLists.txt /home/adarsh/projects/glfw/src/glfw_config.h.in /usr/share/cmake-3.16/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeDependentOption.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindFontconfig.cmake /usr/share/cmake-3.16/Modules/FindFreetype.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/FindX11.cmake /usr/share/cmake-3.16/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake /usr/share/cmake-3.16/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../lib/CMakeLists.txt ../lib/glm/CMakeLists.txt ../lib/glm/glm/CMakeLists.txt /home/adarsh/projects/glfw/CMake/cmake_uninstall.cmake.in /home/adarsh/projects/glfw/CMake/glfw3.pc.in /home/adarsh/projects/glfw/CMake/glfw3Config.cmake.in /home/adarsh/projects/glfw/CMakeLists.txt /home/adarsh/projects/glfw/src/CMakeLists.txt /home/adarsh/projects/glfw/src/glfw_config.h.in /usr/share/cmake-3.16/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeDependentOption.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindFontconfig.cmake /usr/share/cmake-3.16/Modules/FindFreetype.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/FindX11.cmake /usr/share/cmake-3.16/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake /usr/share/cmake-3.16/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
 
 
 #############################################

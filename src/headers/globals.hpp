@@ -1,3 +1,8 @@
-#define GLFW_INCLUDE_NONE
-#include <GLFW/glfw3.h>
-#include <glad/glad.h>
+#pragma once
+
+#include <glm/glm.hpp>
+#include "stb_image.h"
+
+// #include "renderer.hpp"
+class Renderer;
+extern Renderer *renderer;

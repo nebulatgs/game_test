@@ -26,3 +26,15 @@
 /home/adarsh/projects/game_test/lib/build/CMakeFiles/rebuild_cache.dir
 /home/adarsh/projects/game_test/lib/build/CMakeFiles/edit_cache.dir
 /home/adarsh/projects/game_test/lib/build/CMakeFiles/glad.dir
+/home/adarsh/projects/game_test/lib/glm/build/CMakeFiles/install/strip.dir
+/home/adarsh/projects/game_test/lib/glm/build/CMakeFiles/install/local.dir
+/home/adarsh/projects/game_test/lib/glm/build/CMakeFiles/install.dir
+/home/adarsh/projects/game_test/lib/glm/build/CMakeFiles/list_install_components.dir
+/home/adarsh/projects/game_test/lib/glm/build/CMakeFiles/rebuild_cache.dir
+/home/adarsh/projects/game_test/lib/glm/build/CMakeFiles/edit_cache.dir
+/home/adarsh/projects/game_test/lib/glm/build/glm/CMakeFiles/install/local.dir
+/home/adarsh/projects/game_test/lib/glm/build/glm/CMakeFiles/install.dir
+/home/adarsh/projects/game_test/lib/glm/build/glm/CMakeFiles/list_install_components.dir
+/home/adarsh/projects/game_test/lib/glm/build/glm/CMakeFiles/rebuild_cache.dir
+/home/adarsh/projects/game_test/lib/glm/build/glm/CMakeFiles/edit_cache.dir
+/home/adarsh/projects/game_test/lib/glm/build/glm/CMakeFiles/install/strip.dir

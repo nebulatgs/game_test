@@ -1,26 +1,32 @@
 [
 {
   "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I/home/adarsh/projects/glfw/include  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/lucidity.cpp.o -c /home/adarsh/projects/game_test/src/lucidity.cpp",
+  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/lucidity.cpp.o -c /home/adarsh/projects/game_test/src/lucidity.cpp",
   "file": "/home/adarsh/projects/game_test/src/lucidity.cpp"
 },
 
 {
   "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I/home/adarsh/projects/glfw/include  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/shader.cpp.o -c /home/adarsh/projects/game_test/src/shader.cpp",
+  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/shader.cpp.o -c /home/adarsh/projects/game_test/src/shader.cpp",
   "file": "/home/adarsh/projects/game_test/src/shader.cpp"
 },
 
 {
   "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I/home/adarsh/projects/glfw/include  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/renderer.cpp.o -c /home/adarsh/projects/game_test/src/renderer.cpp",
+  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/renderer.cpp.o -c /home/adarsh/projects/game_test/src/renderer.cpp",
   "file": "/home/adarsh/projects/game_test/src/renderer.cpp"
 },
 
 {
   "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I/home/adarsh/projects/glfw/include  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/globals.cpp.o -c /home/adarsh/projects/game_test/src/globals.cpp",
+  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/globals.cpp.o -c /home/adarsh/projects/game_test/src/globals.cpp",
   "file": "/home/adarsh/projects/game_test/src/globals.cpp"
+},
+
+{
+  "directory": "/home/adarsh/projects/game_test/build",
+  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/stb_image.cpp.o -c /home/adarsh/projects/game_test/src/stb_image.cpp",
+  "file": "/home/adarsh/projects/game_test/src/stb_image.cpp"
 },
 
 {
@@ -121,7 +127,7 @@
 
 {
   "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10  -I../lib/include  -g   -o ../lib/build/CMakeFiles/glad.dir/src/glad.c.o   -c /home/adarsh/projects/game_test/lib/src/glad.c",
+  "command": "/bin/clang-10  -I../lib/include -I../lib/include/KHR  -g   -o ../lib/build/CMakeFiles/glad.dir/src/glad.c.o   -c /home/adarsh/projects/game_test/lib/src/glad.c",
   "file": "/home/adarsh/projects/game_test/lib/src/glad.c"
 }
 ]
