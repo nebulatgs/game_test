@@ -7,10 +7,16 @@
 void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
 {
 	if (key == GLFW_KEY_LEFT && (action == GLFW_REPEAT || action == GLFW_PRESS))
-		game->camera.move(glm::vec2(0.01, 0.0));
+	{
+		// game->camera.move({0.01, 0.0});
+		game->player->move({-0.05, 0.0});
+	}
 
 	if (key == GLFW_KEY_RIGHT && (action == GLFW_REPEAT || action == GLFW_PRESS))
-		game->camera.move(glm::vec2(-0.01, 0.0));
+	{
+		// game->camera.move({-0.01, 0.0});
+		game->player->move({0.05, 0.0});
+	}
 }
 
 Game::Game(int width, int height, std::string title) : camera()
@@ -53,6 +59,10 @@ void Game::init(int width, int height, std::string title)
 	int imgWidth, imgHeight, nrChannels;
 	GLubyte *data;
 
+	data = stbi_load("../src/images/basic_tiles.png", &imgWidth, &imgHeight, &nrChannels, 0);
+	tileset = loadTexture(data, imgWidth, imgHeight);
+	stbi_image_free(data);
+
 	data = stbi_load("../src/images/tilemap.png", &imgWidth, &imgHeight, &nrChannels, 0);
 	spriteSheet = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
@@ -61,11 +71,12 @@ void Game::init(int width, int height, std::string title)
 	renderObjects.push_back(map);
 
 	data = stbi_load("../src/images/Blob.png", &imgWidth, &imgHeight, &nrChannels, 0);
-	player = loadTexture(data, imgWidth, imgHeight);
+	playerImg = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
 
 	std::shared_ptr sprite = std::make_shared<Sprite>(imgWidth, imgHeight, 0, this, "../shaders/sprite.vert", "../shaders/sprite.frag");
 	renderObjects.push_back(sprite);
+	player = sprite;
 
 	// glm::mat4 scaleTrans = glm::scale(camera.getTransform(), glm::vec3(2));
 	printf("OpenGL version: %s\n", glGetString(GL_VERSION));
@@ -101,7 +112,7 @@ void Game::draw()
 
 	for (auto &&i : renderObjects)
 	{
-		glm::mat4 scaleTrans = glm::scale(camera.getTransform(), glm::vec3(40, 40, 1));
+		glm::mat4 scaleTrans = glm::scale(camera.getTransform(), glm::vec3(width / 35, width / 35, 1));
 		i->setTransform(scaleTrans);
 		// i->setTextureAtlas(0);
 		// i->update();
@@ -113,6 +124,16 @@ void Game::draw()
 
 void Game::update()
 {
+	// if (player->pos.x + camera.pos.x > 0.0f)
+	// {
+	// 	printf("%f, %f\n", camera.pos.x, player->pos.x);
+	// 	camera.move({-0.004f, 0.0f});
+	// }
+	if (abs(player->pos.x + (camera.pos.x * 6.0f)) > 5.0f)
+	{
+		printf("%f, %f; %f\n", camera.pos.x, player->pos.x, abs(player->pos.x + (camera.pos.x * 6.0f)));
+		camera.move({-1.0f * (glm::normalize(player->pos + (camera.pos* 6.0f)) / 80.0f).x, 0.0f});
+	}
 	camera.update();
 	for (auto &&i : renderObjects)
 	{

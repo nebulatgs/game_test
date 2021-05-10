@@ -14,16 +14,17 @@ void Camera::update()
 	vel += acc;
 	// pos += vel;
 	transform = glm::translate(transform, glm::vec3(vel, 0));
+	pos += vel;
 	vel *= 0.9;
 	acc *= 0.3;
 }
 
 void Camera::move(glm::vec2 motion)
 {
-	acc += motion;
+	vel += motion;
 }
 
 glm::mat4 Camera::getTransform()
 {
-	return glm::scale(transform, glm::vec3(1, 1, 0));
+	return glm::scale(transform, glm::vec3(2, 2, 1));
 }

@@ -13,4 +13,5 @@ public:
 	// glm::vec2 pos;
 	glm::vec2 vel;
 	glm::vec2 acc;
+	glm::vec2 pos;
 };

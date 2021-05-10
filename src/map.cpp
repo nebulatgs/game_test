@@ -46,6 +46,8 @@ void Map::initBuffers()
 void Map::setTransform(glm::mat4 transform)
 {
 	transform = glm::scale(transform, glm::vec3((static_cast<float>(width) / static_cast<float>(game->width)), (static_cast<float>(height) / static_cast<float>(game->height)), 1));
+	// transform = glm::scale(transform, {static_cast<float>(height) / static_cast<float>(width), 1.0f, 1.0f});
+	// this->position = transform;
 	this->transform = transform;
 }
 
@@ -57,7 +59,8 @@ void Map::setTextureAtlas(GLuint atlasID)
 void Map::update()
 {
 	shader.SetMatrix4("transform", transform, true);
-	shader.SetInteger("tex", textureAtlas);
+	shader.SetInteger("tileset", textureAtlas);
+	shader.SetInteger("tiles", textureAtlas + 1);
 }
 
 void Map::render()

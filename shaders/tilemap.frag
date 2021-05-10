@@ -6,8 +6,33 @@ in vec4 vertexColor; // the input variable from the vertex shader (same name and
 in vec2 TexCoord;
 
 uniform sampler2D tiles;
+uniform sampler2D tileset;
 
 void main()
 {
-	FragColor = texture(tiles, TexCoord);
+	vec2 tileOffset = texture(tiles, TexCoord.xy).xy;
+	if(tileOffset.x > 0.48 && tileOffset.x < 0.5)
+	{
+		tileOffset = vec2(0.0, 2.0);
+	}
+	else if(tileOffset.x > 0.29 && tileOffset.x < 0.31)
+	{
+		tileOffset = vec2(1.0, 2.0);
+	}
+	else if(tileOffset.x > 0.44 && tileOffset.x < 0.46)
+	{
+		tileOffset = vec2(2.0, 1.0);
+	}
+	else if(tileOffset.x > 0.9)
+	{
+		tileOffset = vec2(1.0, 1.0);
+	}
+	else
+	{
+		tileOffset = vec2(0.0, 0.0);
+	}
+	vec4 fractCoords = texture(tileset, (fract(TexCoord * 64.0) / 3.0) + tileOffset / 3.0);
+	FragColor = fractCoords;// * 100.0) / 100.0);
+	// FragColor = texture(tileset, (FragColor.xy)*10.0);
+	// FragColor = vec4(TexCoord, 0.0, 1.0);
 } 

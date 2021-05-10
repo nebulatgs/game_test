@@ -8,6 +8,7 @@
 #include "shader.hpp"
 #include "camera.hpp"
 #include "sceneobject.hpp"
+#include "sprite.hpp"
 
 
 class Game
@@ -31,8 +32,10 @@ public:
 	int height;
 
 	GLuint spriteSheet;
-	GLuint player;
+	GLuint playerImg;
+	GLuint tileset;
 	Camera camera;
+	std::shared_ptr<Sprite> player;
 
 private:
 	GLuint loadTexture(GLubyte *data, int imgWidth, int imgHeight);
@@ -42,4 +45,5 @@ private:
 	double lastTime = 0.0;
 	int textureCount = 0;
 	std::vector<std::shared_ptr<SceneObject>> renderObjects;
+
 };

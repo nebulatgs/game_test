@@ -12,7 +12,7 @@ void main()
 	// vec2 texCoord = TexCoord + 1.0;
 	// texCoord.y += 2.0;
 	FragColor = texture(tex, (TexCoord / 6.0));
-	// FragColor.rg = texCoord;
+	// FragColor.rg = TexCoord;
 	// FragColor.a = 1.0;
 	// if(FragColor.a == 0.0)
 	// 	discard;

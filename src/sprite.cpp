@@ -5,7 +5,7 @@ Sprite::Sprite(int width, int height, int mapIndex, Game *game, Shader shader) :
 {
 	initBuffers();
 	this->game = game;
-	textureAtlas = 1;
+	textureAtlas = 21;
 }
 
 Sprite::Sprite(int width, int height, int mapIndex, Game *game, const char *vertexPath, const char *fragmentPath) : mapIndex(mapIndex), width(width), height(height)
@@ -13,7 +13,7 @@ Sprite::Sprite(int width, int height, int mapIndex, Game *game, const char *vert
 	initBuffers();
 	this->game = game;
 	shader.Compile(vertexPath, fragmentPath);
-	textureAtlas = 1;
+	textureAtlas = 2;
 }
 
 void Sprite::initBuffers()
@@ -45,8 +45,10 @@ void Sprite::initBuffers()
 
 void Sprite::setTransform(glm::mat4 transform)
 {
+	// transform = this->transform * transform;
 	transform = glm::scale(transform, glm::vec3((static_cast<float>(width) / static_cast<float>(game->width)), (static_cast<float>(height) / static_cast<float>(game->height)), 1));
 	transform = glm::scale(transform, glm::vec3(0.05, 0.05, 1));
+	transform = glm::translate(transform, {pos, 0});
 	this->transform = transform;
 }
 
@@ -57,9 +59,20 @@ void Sprite::setTextureAtlas(GLuint atlasID)
 
 void Sprite::update()
 {
+	vel += acc;
+	pos += vel;
+	vel *= 0.8;
+	acc *= 0.6;
+	// vel.y -= 0.001;
+	facing = vel;
 	shader.SetMatrix4("transform", transform, true);
 	shader.SetInteger("tex", textureAtlas);
-	shader.SetVector2f("tile", {2.0, 1.0});
+	if(facing.x > 0)
+		shader.SetVector2f("tile", {0, 1.0});
+	else if (facing.x < 0)
+		shader.SetVector2f("tile", {2.0, 1.0});
+	else
+		shader.SetVector2f("tile", {1.0, 1.0});
 }
 
 void Sprite::render()
@@ -68,4 +81,10 @@ void Sprite::render()
 	glBindVertexArray(VAO);
 	shader.Use();
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+}
+
+void Sprite::move(glm::vec2 motion)
+{
+	// transform = glm::translate(transform, {motion, 0.0f});
+	acc += motion;
 }
