@@ -117,6 +117,13 @@ build CMakeFiles/lucidity.dir/src/map.cpp.o: CXX_COMPILER__lucidity ../src/map.c
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
+build CMakeFiles/lucidity.dir/src/collisionmap.cpp.o: CXX_COMPILER__lucidity ../src/collisionmap.cpp || cmake_object_order_depends_target_lucidity
+  DEP_FILE = CMakeFiles/lucidity.dir/src/collisionmap.cpp.o.d
+  FLAGS = -g   -std=c++17  -O3 -fexceptions -std=gnu++17
+  INCLUDES = -I../lib/include -I../lib/glm -I../lib/glm/glm/..
+  OBJECT_DIR = CMakeFiles/lucidity.dir
+  OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target lucidity
@@ -125,7 +132,7 @@ build CMakeFiles/lucidity.dir/src/map.cpp.o: CXX_COMPILER__lucidity ../src/map.c
 #############################################
 # Link the executable lucidity.js
 
-build lucidity.js: CXX_EXECUTABLE_LINKER__lucidity CMakeFiles/lucidity.dir/src/lucidity.cpp.o CMakeFiles/lucidity.dir/src/shader.cpp.o CMakeFiles/lucidity.dir/src/game.cpp.o CMakeFiles/lucidity.dir/src/globals.cpp.o CMakeFiles/lucidity.dir/src/stb_image.cpp.o CMakeFiles/lucidity.dir/src/camera.cpp.o CMakeFiles/lucidity.dir/src/sprite.cpp.o CMakeFiles/lucidity.dir/src/map.cpp.o
+build lucidity.js: CXX_EXECUTABLE_LINKER__lucidity CMakeFiles/lucidity.dir/src/lucidity.cpp.o CMakeFiles/lucidity.dir/src/shader.cpp.o CMakeFiles/lucidity.dir/src/game.cpp.o CMakeFiles/lucidity.dir/src/globals.cpp.o CMakeFiles/lucidity.dir/src/stb_image.cpp.o CMakeFiles/lucidity.dir/src/camera.cpp.o CMakeFiles/lucidity.dir/src/sprite.cpp.o CMakeFiles/lucidity.dir/src/map.cpp.o CMakeFiles/lucidity.dir/src/collisionmap.cpp.o
   FLAGS = -g
   LINK_FLAGS = $
 						-std=c++17 $

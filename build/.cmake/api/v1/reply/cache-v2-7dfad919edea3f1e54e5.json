@@ -1446,6 +1446,30 @@
 			"value" : "FALSE"
 		},
 		{
+			"name" : "DCMAKE_CROSSCOMPILING_EMULATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "STRING",
+			"value" : "/workspaces/emsdk/node/14.15.5_64bit/bin/node"
+		},
+		{
+			"name" : "DCMAKE_TOOLCHAIN_FILE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "STRING",
+			"value" : "/workspaces/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake"
+		},
+		{
 			"name" : "EMSCRIPTEN",
 			"properties" : 
 			[

@@ -273,6 +273,12 @@ CMAKE_TOOLCHAIN_FILE:FILEPATH=/workspaces/emsdk/upstream/emscripten/cmake/Module
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//No help, variable specified on the command line.
+DCMAKE_CROSSCOMPILING_EMULATOR:STRING=/workspaces/emsdk/node/14.15.5_64bit/bin/node
+
+//No help, variable specified on the command line.
+DCMAKE_TOOLCHAIN_FILE:STRING=/workspaces/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake
+
 //If true, we are targeting Emscripten output.
 EMSCRIPTEN:BOOL=1
 

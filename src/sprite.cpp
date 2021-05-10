@@ -50,7 +50,7 @@ void Sprite::setTransform(glm::mat4 transform)
 	// transform = this->transform * transform;
 	transform = glm::scale(transform, glm::vec3((static_cast<float>(width) / static_cast<float>(game->width)), (static_cast<float>(height) / static_cast<float>(game->height)), 1));
 	transform = glm::scale(transform, glm::vec3(0.05, 0.05, 1));
-	transform = glm::translate(transform, {pos, 0});
+	transform = glm::translate(transform, {pos, 1.0});
 	this->transform = transform;
 }
 
@@ -59,21 +59,35 @@ void Sprite::setTextureAtlas(GLuint atlasID)
 	textureAtlas = atlasID;
 }
 
+std::tuple<bool, bool, bool, bool> Sprite::checkCollision()
+{
+	return game->checkCollision(pos, 2);
+}
+
 void Sprite::update()
 {
+	auto collision = checkCollision();
 	vel += acc;
 	pos += vel;
-	vel *= 0.8;
-	acc *= 0.6;
-	if (pos.y > 2.0f)
-		acc.y -= 0.05;
+	vel.x *= 0.6;
+	vel.y *= 0.93;
+	acc.x *= 0.4;
+	acc.y *= 0.9;
+	if (pos.y > 4.0f)
+		acc.y -= 0.008;
+	if (pos.y < 4.0f && acc.y < 0.0f && vel.y < 0.0f)
+	{
+		acc.y *= 0.0f;
+		vel.y *= 0.0f;
+		pos.y -= (pos.y - 4.0f);
+	}
 	facing = vel;
 	shader.SetMatrix4("transform", transform, true);
 	shader.SetInteger("tex", textureAtlas);
 	if (facing.x > 0)
 	{
 		shader.SetVector2f("tile", {1.0, 1.0});
-		if (facing.y > 0.1)
+		if (facing.y > 0.1 || pos.y > 4.0f)
 		{
 			shader.SetVector2f("tile", {2.0, 2.0});
 		}
@@ -82,7 +96,7 @@ void Sprite::update()
 	else if (facing.x < 0)
 	{
 		shader.SetVector2f("tile", {0.0, 0.0});
-		if (facing.y > 0.1)
+		if (facing.y > 0.1 || pos.y > 4.0f)
 		{
 			shader.SetVector2f("tile", {0.0, 1.0});
 		}
@@ -109,8 +123,8 @@ void Sprite::move(float mag)
 
 void Sprite::jump(float mag)
 {
-	if (pos.y <= 2.0f)
+	if (pos.y <= 4.0f)
 	{
-		acc += glm::vec2(0.0f, mag);
+		vel += glm::vec2(0.0f, mag);
 	}
 }

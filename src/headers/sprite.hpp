@@ -20,6 +20,7 @@ public:
 private:
 	void initBuffers();
 	void initTextures();
+	std::tuple<bool, bool, bool, bool> checkCollision();
 
 private:
 	int width;

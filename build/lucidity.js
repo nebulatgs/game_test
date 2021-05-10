@@ -189,7 +189,7 @@ Module['FS_createPath']("/src", "images", true, true);
     }
   
    }
-   loadPackage({"files": [{"filename": "/shaders/tilemap.frag", "start": 0, "end": 1007, "audio": 0}, {"filename": "/shaders/sprite.frag", "start": 1007, "end": 1426, "audio": 0}, {"filename": "/shaders/sprite.vert", "start": 1426, "end": 1779, "audio": 0}, {"filename": "/shaders/tilemap.vert", "start": 1779, "end": 2393, "audio": 0}, {"filename": "/src/images/another_map2.png", "start": 2393, "end": 3461, "audio": 0}, {"filename": "/src/images/tilemap.png", "start": 3461, "end": 4118, "audio": 0}, {"filename": "/src/images/another_map3.png", "start": 4118, "end": 4559, "audio": 0}, {"filename": "/src/images/basic_tiles.jpg", "start": 4559, "end": 5746, "audio": 0}, {"filename": "/src/images/Blob.png", "start": 5746, "end": 6394, "audio": 0}, {"filename": "/src/images/test.jpg", "start": 6394, "end": 1244480, "audio": 0}, {"filename": "/src/images/another_map.png", "start": 1244480, "end": 1245560, "audio": 0}, {"filename": "/src/images/basic_tiles.png", "start": 1245560, "end": 1246400, "audio": 0}], "remote_package_size": 1246400, "package_uuid": "1d1f72de-5796-4187-b85e-0de43d0385f0"});
+   loadPackage({"files": [{"filename": "/shaders/tilemap.frag", "start": 0, "end": 1006, "audio": 0}, {"filename": "/shaders/sprite.frag", "start": 1006, "end": 1423, "audio": 0}, {"filename": "/shaders/sprite.vert", "start": 1423, "end": 1774, "audio": 0}, {"filename": "/shaders/tilemap.vert", "start": 1774, "end": 2386, "audio": 0}, {"filename": "/src/images/another_map2.png", "start": 2386, "end": 3454, "audio": 0}, {"filename": "/src/images/another_map4.png", "start": 3454, "end": 6576, "audio": 0}, {"filename": "/src/images/tilemap.png", "start": 6576, "end": 7233, "audio": 0}, {"filename": "/src/images/another_map3.png", "start": 7233, "end": 7674, "audio": 0}, {"filename": "/src/images/basic_tiles.jpg", "start": 7674, "end": 8861, "audio": 0}, {"filename": "/src/images/Blob.png", "start": 8861, "end": 9509, "audio": 0}, {"filename": "/src/images/test.jpg", "start": 9509, "end": 1247595, "audio": 0}, {"filename": "/src/images/another_map.png", "start": 1247595, "end": 1248675, "audio": 0}, {"filename": "/src/images/basic_tiles.png", "start": 1248675, "end": 1249515, "audio": 0}], "remote_package_size": 1249515, "package_uuid": "2de11b3a-d14a-44ef-9705-161ee5b5c1e3"});
   
   })();
   
@@ -6401,6 +6401,8 @@ var ASM_CONSTS = {
         );
     }
 
+  function _glGenerateMipmap(x0) { GLctx['generateMipmap'](x0) }
+
   function _glGetProgramInfoLog(program, maxLength, length, infoLog) {
       var log = GLctx.getProgramInfoLog(GL.programs[program]);
       if (log === null) log = '(unknown error)';
@@ -8070,6 +8072,7 @@ var asmLibraryArg = {
   "glGenBuffers": _glGenBuffers,
   "glGenTextures": _glGenTextures,
   "glGenVertexArrays": _glGenVertexArrays,
+  "glGenerateMipmap": _glGenerateMipmap,
   "glGetProgramInfoLog": _glGetProgramInfoLog,
   "glGetProgramiv": _glGetProgramiv,
   "glGetShaderInfoLog": _glGetShaderInfoLog,
@@ -8110,7 +8113,6 @@ var asmLibraryArg = {
   "invoke_vii": invoke_vii,
   "invoke_viii": invoke_viii,
   "invoke_viiii": invoke_viiii,
-  "invoke_viiiiiiiii": invoke_viiiiiiiii,
   "setTempRet0": _setTempRet0,
   "strftime_l": _strftime_l
 };
@@ -8307,17 +8309,6 @@ function invoke_iiiiiiii(index,a1,a2,a3,a4,a5,a6,a7) {
   var sp = stackSave();
   try {
     return wasmTable.get(index)(a1,a2,a3,a4,a5,a6,a7);
-  } catch(e) {
-    stackRestore(sp);
-    if (e !== e+0 && e !== 'longjmp') throw e;
-    _setThrew(1, 0);
-  }
-}
-
-function invoke_viiiiiiiii(index,a1,a2,a3,a4,a5,a6,a7,a8,a9) {
-  var sp = stackSave();
-  try {
-    wasmTable.get(index)(a1,a2,a3,a4,a5,a6,a7,a8,a9);
   } catch(e) {
     stackRestore(sp);
     if (e !== e+0 && e !== 'longjmp') throw e;

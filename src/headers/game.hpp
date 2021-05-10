@@ -9,7 +9,7 @@
 #include "camera.hpp"
 #include "sceneobject.hpp"
 #include "sprite.hpp"
-
+#include "collisionmap.hpp"
 
 class Game
 {
@@ -26,6 +26,7 @@ public:
 	void input();
 
 	bool closed();
+	std::tuple<bool, bool, bool, bool> checkCollision(glm::vec2 position, float radius);
 
 public:
 	int width;
@@ -45,5 +46,5 @@ private:
 	double lastTime = 0.0;
 	int textureCount = 0;
 	std::vector<std::shared_ptr<SceneObject>> renderObjects;
-
+	CollisionMap collision_map;
 };

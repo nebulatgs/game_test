@@ -1,5 +1,5 @@
 #version 300 es
-precision mediump float;
+precision highp float;
 out vec4 FragColor;
   
 in vec4 vertexColor; // the input variable from the vertex shader (same name and same type) 
@@ -33,7 +33,7 @@ void main()
 	// {
 	// 	tileOffset = vec2(0.0, 0.0);
 	// }
-	vec4 fractCoords = texture(tileset, (fract(TexCoord * imgDims) / 3.0) + tileOffset / 3.0);
+	vec4 fractCoords = texture(tileset, (fract(TexCoord * imgDims) / 3.05) + tileOffset / 3.0);
 	FragColor = fractCoords;// * 100.0) / 100.0);
 	// FragColor = texture(tileset, (FragColor.xy)*10.0);
 	// FragColor = vec4(TexCoord, 0.0, 1.0);

@@ -49,6 +49,12 @@
 
 {
   "directory": "/workspaces/game_test/build",
+  "command": "/workspaces/emsdk/upstream/emscripten/em++   -I../lib/include -I../lib/glm -I../lib/glm/glm/..  -g   -std=c++17  -O3 -fexceptions -std=gnu++17 -o CMakeFiles/lucidity.dir/src/collisionmap.cpp.o -c /workspaces/game_test/src/collisionmap.cpp",
+  "file": "/workspaces/game_test/src/collisionmap.cpp"
+},
+
+{
+  "directory": "/workspaces/game_test/build",
   "command": "/workspaces/emsdk/upstream/emscripten/emcc  -I../lib/include -I../lib/include/KHR  -g   -o ../lib/build/CMakeFiles/glad.dir/src/glad.c.o   -c /workspaces/game_test/lib/src/glad.c",
   "file": "/workspaces/game_test/lib/src/glad.c"
 }

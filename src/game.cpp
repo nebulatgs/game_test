@@ -65,10 +65,11 @@ void Game::init(int width, int height, std::string title)
 	tileset = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
 
-	data = stbi_load("../src/images/another_map2.png", &imgWidth, &imgHeight, &nrChannels, 0);
+	data = stbi_load("../src/images/another_map4.png", &imgWidth, &imgHeight, &nrChannels, 0);
 	spriteSheet = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
 
+	collision_map = CollisionMap(data, imgWidth, imgHeight);
 	std::shared_ptr map = std::make_shared<Map>(imgWidth, imgHeight, 0, this, "../shaders/tilemap.vert", "../shaders/tilemap.frag");
 	renderObjects.push_back(map);
 
@@ -95,6 +96,7 @@ GLuint Game::loadTexture(GLubyte *data, int imgWidth, int imgHeight)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+	glGenerateMipmap(GL_TEXTURE_2D);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imgWidth, imgHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 	return texture;
 }
@@ -131,10 +133,10 @@ void Game::update()
 	// 	printf("%f, %f\n", camera.pos.x, player->pos.x);
 	// 	camera.move({-0.004f, 0.0f});
 	// }
-	if (abs(player->pos.x + (camera.pos.x * 6.0f)) > 5.0f)
+	if (abs(player->pos.x + (camera.pos.x * 6.0f)) > 5.0f || abs(player->pos.y + (camera.pos.y * 6.0f)) > 5.0f)
 	{
-		printf("%f, %f; %f\n", camera.pos.x, player->pos.x, abs(player->pos.x + (camera.pos.x * 6.0f)));
-		camera.move({-1.0f * (glm::normalize(player->pos + (camera.pos * 6.0f)) / 80.0f).x, 0.0f});
+		// printf("%f, %f; %f\n", camera.pos.x, player->pos.x, abs(player->pos.x + (camera.pos.x * 6.0f)));
+		camera.move({-1.0f * (glm::normalize(player->pos + (camera.pos * 6.0f)) / 80.0f)});
 	}
 	camera.update();
 	for (auto &&i : renderObjects)
@@ -149,15 +151,15 @@ void Game::input()
 	glfwPollEvents();
 	if (left)
 	{
-		game->player->move(-0.03);
+		game->player->move(-0.093);
 	}
 	if (right)
 	{
-		game->player->move(0.03);
+		game->player->move(0.093);
 	}
 	if (up)
 	{
-		game->player->jump(0.05);
+		game->player->jump(0.5);
 	}
 }
 
@@ -172,4 +174,11 @@ void Game::tick()
 		update();
 		input();
 	}
+}
+
+std::tuple<bool, bool, bool, bool> Game::checkCollision(glm::vec2 position, float radius)
+{
+	auto intPos = glm::ivec2(position);
+	bool down = collision_map.checkCollision(position);
+	return {0, down, 0, 0};
 }
