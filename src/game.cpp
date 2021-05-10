@@ -3,19 +3,20 @@
 #include "headers/game.hpp"
 #include "headers/stb_image.h"
 #include "headers/globals.hpp"
-
+bool left = 0, right = 0, up = 0;
 void key_callback(GLFWwindow *window, int key, int scancode, int action, int mods)
 {
-	if (key == GLFW_KEY_LEFT && (action == GLFW_REPEAT || action == GLFW_PRESS))
+	if (key == GLFW_KEY_LEFT)
 	{
-		// game->camera.move({0.01, 0.0});
-		game->player->move({-0.05, 0.0});
+		left = action;
 	}
-
-	if (key == GLFW_KEY_RIGHT && (action == GLFW_REPEAT || action == GLFW_PRESS))
+	if (key == GLFW_KEY_RIGHT)
 	{
-		// game->camera.move({-0.01, 0.0});
-		game->player->move({0.05, 0.0});
+		right = action;
+	}
+	if (key == GLFW_KEY_UP)
+	{
+		up = action;
 	}
 }
 
@@ -42,17 +43,18 @@ void Game::init(int width, int height, std::string title)
 
 	// Load GL
 	glfwMakeContextCurrent(window);
-	gladLoadGL();
+	// gladLoadGL();
 
 	// Set viewport
 	glfwGetFramebufferSize(window, &this->width, &this->height);
 	glViewport(0, 0, this->width, this->height);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glOrtho(0, this->width, this->height, 0, 1, -1);
+	// glMatrixMode(GL_PROJECTION);
+	// glLoadIdentity();
+	// glOrtho(0, this->width, this->height, 0, 1, -1);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
-	glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+	// glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+	glClearColor(0.176, 0.204, 0.212, 1.0);
 
 	stbi_set_flip_vertically_on_load(true);
 
@@ -63,7 +65,7 @@ void Game::init(int width, int height, std::string title)
 	tileset = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
 
-	data = stbi_load("../src/images/tilemap.png", &imgWidth, &imgHeight, &nrChannels, 0);
+	data = stbi_load("../src/images/another_map2.png", &imgWidth, &imgHeight, &nrChannels, 0);
 	spriteSheet = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
 
@@ -132,7 +134,7 @@ void Game::update()
 	if (abs(player->pos.x + (camera.pos.x * 6.0f)) > 5.0f)
 	{
 		printf("%f, %f; %f\n", camera.pos.x, player->pos.x, abs(player->pos.x + (camera.pos.x * 6.0f)));
-		camera.move({-1.0f * (glm::normalize(player->pos + (camera.pos* 6.0f)) / 80.0f).x, 0.0f});
+		camera.move({-1.0f * (glm::normalize(player->pos + (camera.pos * 6.0f)) / 80.0f).x, 0.0f});
 	}
 	camera.update();
 	for (auto &&i : renderObjects)
@@ -145,6 +147,18 @@ void Game::update()
 void Game::input()
 {
 	glfwPollEvents();
+	if (left)
+	{
+		game->player->move(-0.03);
+	}
+	if (right)
+	{
+		game->player->move(0.03);
+	}
+	if (up)
+	{
+		game->player->jump(0.05);
+	}
 }
 
 void Game::tick()

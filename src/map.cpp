@@ -61,6 +61,7 @@ void Map::update()
 	shader.SetMatrix4("transform", transform, true);
 	shader.SetInteger("tileset", textureAtlas);
 	shader.SetInteger("tiles", textureAtlas + 1);
+	shader.SetVector2f("imgDims", {width, height});
 }
 
 void Map::render()

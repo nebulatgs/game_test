@@ -12,7 +12,8 @@ public:
 	Sprite(int width, int height, int mapIndex, Game *game, Shader shader);
 	void render() override;
 	void update() override;
-	void move(glm::vec2 motion);
+	void move(float mag);
+	void jump(float mag);
 	void setTransform(glm::mat4 transform) override;
 	void setTextureAtlas(GLuint atlasID) override;
 

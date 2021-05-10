@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/adarsh/projects/game_test/lib/build/libglad.a"
+			"path" : "/workspaces/game_test/lib/build/libglad.a"
 		}
 	],
 	"backtrace" : 1,
@@ -56,11 +56,11 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/adarsh/projects/game_test/lib/include"
+					"path" : "/workspaces/game_test/lib/include"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/home/adarsh/projects/game_test/lib/include/KHR"
+					"path" : "/workspaces/game_test/lib/include/KHR"
 				}
 			],
 			"language" : "C",
@@ -70,12 +70,12 @@
 			]
 		}
 	],
-	"id" : "glad::@659822b0c807715f1e89",
+	"id" : "glad::@9a70d37221643df9c8df",
 	"name" : "glad",
 	"nameOnDisk" : "libglad.a",
 	"paths" : 
 	{
-		"build" : "/home/adarsh/projects/game_test/lib/build",
+		"build" : "/workspaces/game_test/lib/build",
 		"source" : "lib"
 	},
 	"sourceGroups" : 

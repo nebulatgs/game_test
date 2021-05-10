@@ -437,3 +437,32 @@ Run Build Command(s):/home/adarsh/miniconda3/bin/ninja cmTC_6349a && [1/2] Build
 
 
 
+The target system is: Emscripten - 1 - x86
+The host system is: Linux - 5.4.0-1046-azure - x86_64
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /workspaces/game_test/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/ninja cmTC_fb8c9 && [1/2  50% :: 0.157] Building C object CMakeFiles/cmTC_fb8c9.dir/src.c.o
+[2/2 100% :: 0.573] Linking C executable cmTC_fb8c9.js
+
+
+Source file was:
+#include <pthread.h>
+
+void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+

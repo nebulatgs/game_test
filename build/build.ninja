@@ -31,40 +31,10 @@ include rules.ninja
 
 
 #############################################
-# Utility command for install/strip
-
-build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
-  COMMAND = cd /home/adarsh/projects/game_test/build && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build install/strip: phony CMakeFiles/install/strip.util
-
-
-#############################################
-# Utility command for install
-
-build CMakeFiles/install.util: CUSTOM_COMMAND all
-  COMMAND = cd /home/adarsh/projects/game_test/build && /usr/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build install: phony CMakeFiles/install.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build list_install_components: phony
-
-
-#############################################
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/game_test/build && /usr/bin/cmake -S/home/adarsh/projects/game_test -B/home/adarsh/projects/game_test/build
+  COMMAND = cd /workspaces/game_test/build && /usr/bin/cmake -S/workspaces/game_test -B/workspaces/game_test/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -76,23 +46,11 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/game_test/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /workspaces/game_test/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
 build edit_cache: phony CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for install/local
-
-build CMakeFiles/install/local.util: CUSTOM_COMMAND all
-  COMMAND = cd /home/adarsh/projects/game_test/build && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build install/local: phony CMakeFiles/install/local.util
 
 # =============================================================================
 # Object build statements for EXECUTABLE target lucidity
@@ -101,61 +59,61 @@ build install/local: phony CMakeFiles/install/local.util
 #############################################
 # Order-only phony target for lucidity
 
-build cmake_object_order_depends_target_lucidity: phony || cmake_object_order_depends_target_glad cmake_object_order_depends_target_glfw
+build cmake_object_order_depends_target_lucidity: phony || CMakeFiles/lucidity.dir
 
 build CMakeFiles/lucidity.dir/src/lucidity.cpp.o: CXX_COMPILER__lucidity ../src/lucidity.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/lucidity.cpp.o.d
-  FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
+  FLAGS = -g   -std=c++17  -O3 -fexceptions -std=gnu++17
+  INCLUDES = -I../lib/include -I../lib/glm -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
 build CMakeFiles/lucidity.dir/src/shader.cpp.o: CXX_COMPILER__lucidity ../src/shader.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/shader.cpp.o.d
-  FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
+  FLAGS = -g   -std=c++17  -O3 -fexceptions -std=gnu++17
+  INCLUDES = -I../lib/include -I../lib/glm -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
 build CMakeFiles/lucidity.dir/src/game.cpp.o: CXX_COMPILER__lucidity ../src/game.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/game.cpp.o.d
-  FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
+  FLAGS = -g   -std=c++17  -O3 -fexceptions -std=gnu++17
+  INCLUDES = -I../lib/include -I../lib/glm -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
 build CMakeFiles/lucidity.dir/src/globals.cpp.o: CXX_COMPILER__lucidity ../src/globals.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/globals.cpp.o.d
-  FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
+  FLAGS = -g   -std=c++17  -O3 -fexceptions -std=gnu++17
+  INCLUDES = -I../lib/include -I../lib/glm -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
 build CMakeFiles/lucidity.dir/src/stb_image.cpp.o: CXX_COMPILER__lucidity ../src/stb_image.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/stb_image.cpp.o.d
-  FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
+  FLAGS = -g   -std=c++17  -O3 -fexceptions -std=gnu++17
+  INCLUDES = -I../lib/include -I../lib/glm -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
 build CMakeFiles/lucidity.dir/src/camera.cpp.o: CXX_COMPILER__lucidity ../src/camera.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/camera.cpp.o.d
-  FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
+  FLAGS = -g   -std=c++17  -O3 -fexceptions -std=gnu++17
+  INCLUDES = -I../lib/include -I../lib/glm -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
 build CMakeFiles/lucidity.dir/src/sprite.cpp.o: CXX_COMPILER__lucidity ../src/sprite.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/sprite.cpp.o.d
-  FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
+  FLAGS = -g   -std=c++17  -O3 -fexceptions -std=gnu++17
+  INCLUDES = -I../lib/include -I../lib/glm -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
 build CMakeFiles/lucidity.dir/src/map.cpp.o: CXX_COMPILER__lucidity ../src/map.cpp || cmake_object_order_depends_target_lucidity
   DEP_FILE = CMakeFiles/lucidity.dir/src/map.cpp.o.d
-  FLAGS = -g   -std=gnu++17
-  INCLUDES = -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..
+  FLAGS = -g   -std=c++17  -O3 -fexceptions -std=gnu++17
+  INCLUDES = -I../lib/include -I../lib/glm -I../lib/glm/glm/..
   OBJECT_DIR = CMakeFiles/lucidity.dir
   OBJECT_FILE_DIR = CMakeFiles/lucidity.dir/src
 
@@ -165,376 +123,43 @@ build CMakeFiles/lucidity.dir/src/map.cpp.o: CXX_COMPILER__lucidity ../src/map.c
 
 
 #############################################
-# Link the executable lucidity
+# Link the executable lucidity.js
 
-build lucidity: CXX_EXECUTABLE_LINKER__lucidity CMakeFiles/lucidity.dir/src/lucidity.cpp.o CMakeFiles/lucidity.dir/src/shader.cpp.o CMakeFiles/lucidity.dir/src/game.cpp.o CMakeFiles/lucidity.dir/src/globals.cpp.o CMakeFiles/lucidity.dir/src/stb_image.cpp.o CMakeFiles/lucidity.dir/src/camera.cpp.o CMakeFiles/lucidity.dir/src/sprite.cpp.o CMakeFiles/lucidity.dir/src/map.cpp.o | /home/adarsh/projects/glfw/build/src/libglfw3.a ../lib/build/libglad.a /usr/lib/x86_64-linux-gnu/librt.so /usr/lib/x86_64-linux-gnu/libm.so || ../lib/build/libglad.a /home/adarsh/projects/glfw/build/src/libglfw3.a
+build lucidity.js: CXX_EXECUTABLE_LINKER__lucidity CMakeFiles/lucidity.dir/src/lucidity.cpp.o CMakeFiles/lucidity.dir/src/shader.cpp.o CMakeFiles/lucidity.dir/src/game.cpp.o CMakeFiles/lucidity.dir/src/globals.cpp.o CMakeFiles/lucidity.dir/src/stb_image.cpp.o CMakeFiles/lucidity.dir/src/camera.cpp.o CMakeFiles/lucidity.dir/src/sprite.cpp.o CMakeFiles/lucidity.dir/src/map.cpp.o
   FLAGS = -g
-  LINK_LIBRARIES = /home/adarsh/projects/glfw/build/src/libglfw3.a  ../lib/build/libglad.a  -lpthread  /usr/lib/x86_64-linux-gnu/librt.so  -lm  -ldl
+  LINK_FLAGS = $
+						-std=c++17 $
+						-O3$
+						-flto $
+						-s ASSERTIONS=1$
+						$
+						-s USE_GLFW=3 $
+						-s MAX_WEBGL_VERSION=2 $
+						-s MIN_WEBGL_VERSION=2 $
+						-s WASM=1$
+						-s TOTAL_MEMORY=256MB $
+						$
+						-s ENVIRONMENT=web,worker$
+						--bind$
+						--preload-file ../shaders $
+						--preload-file ../src/images
   OBJECT_DIR = CMakeFiles/lucidity.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = lucidity
-  TARGET_PDB = lucidity.dbg
+  TARGET_FILE = lucidity.js
+  TARGET_PDB = lucidity.js.dbg
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/adarsh/projects/game_test/CMakeLists.txt
+# /workspaces/game_test/CMakeLists.txt
 # =============================================================================
-
-
-#############################################
-# Utility command for install/strip
-
-build /home/adarsh/projects/glfw/build/CMakeFiles/install/strip.util: CUSTOM_COMMAND /home/adarsh/projects/glfw/build/all
-  COMMAND = cd /home/adarsh/projects/glfw/build && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build /home/adarsh/projects/glfw/build/install/strip: phony /home/adarsh/projects/glfw/build/CMakeFiles/install/strip.util
-
-
-#############################################
-# Utility command for install/local
-
-build /home/adarsh/projects/glfw/build/CMakeFiles/install/local.util: CUSTOM_COMMAND /home/adarsh/projects/glfw/build/all
-  COMMAND = cd /home/adarsh/projects/glfw/build && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build /home/adarsh/projects/glfw/build/install/local: phony /home/adarsh/projects/glfw/build/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install
-
-build /home/adarsh/projects/glfw/build/CMakeFiles/install.util: CUSTOM_COMMAND /home/adarsh/projects/glfw/build/all
-  COMMAND = cd /home/adarsh/projects/glfw/build && /usr/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build /home/adarsh/projects/glfw/build/install: phony /home/adarsh/projects/glfw/build/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build /home/adarsh/projects/glfw/build/list_install_components: phony
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build /home/adarsh/projects/glfw/build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/glfw/build && /usr/bin/cmake -S/home/adarsh/projects/game_test -B/home/adarsh/projects/game_test/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build /home/adarsh/projects/glfw/build/rebuild_cache: phony /home/adarsh/projects/glfw/build/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build /home/adarsh/projects/glfw/build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/glfw/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build /home/adarsh/projects/glfw/build/edit_cache: phony /home/adarsh/projects/glfw/build/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for uninstall
-
-build /home/adarsh/projects/glfw/build/uninstall: phony /home/adarsh/projects/glfw/build/CMakeFiles/uninstall
-
-
-#############################################
-# Custom command for /home/adarsh/projects/glfw/build/CMakeFiles/uninstall
-
-build /home/adarsh/projects/glfw/build/CMakeFiles/uninstall: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/glfw/build && /usr/bin/cmake -P /home/adarsh/projects/glfw/build/cmake_uninstall.cmake
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/adarsh/projects/glfw/CMakeLists.txt
-# =============================================================================
-
-
-#############################################
-# Utility command for install/strip
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND /home/adarsh/projects/glfw/build/src/all
-  COMMAND = cd /home/adarsh/projects/glfw/build/src && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build /home/adarsh/projects/glfw/build/src/install/strip: phony /home/adarsh/projects/glfw/build/src/CMakeFiles/install/strip.util
-
-
-#############################################
-# Utility command for install
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/install.util: CUSTOM_COMMAND /home/adarsh/projects/glfw/build/src/all
-  COMMAND = cd /home/adarsh/projects/glfw/build/src && /usr/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build /home/adarsh/projects/glfw/build/src/install: phony /home/adarsh/projects/glfw/build/src/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build /home/adarsh/projects/glfw/build/src/list_install_components: phony
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/glfw/build/src && /usr/bin/cmake -S/home/adarsh/projects/game_test -B/home/adarsh/projects/game_test/build
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build /home/adarsh/projects/glfw/build/src/rebuild_cache: phony /home/adarsh/projects/glfw/build/src/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/glfw/build/src && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build /home/adarsh/projects/glfw/build/src/edit_cache: phony /home/adarsh/projects/glfw/build/src/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for install/local
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/install/local.util: CUSTOM_COMMAND /home/adarsh/projects/glfw/build/src/all
-  COMMAND = cd /home/adarsh/projects/glfw/build/src && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build /home/adarsh/projects/glfw/build/src/install/local: phony /home/adarsh/projects/glfw/build/src/CMakeFiles/install/local.util
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target glfw
-
-
-#############################################
-# Order-only phony target for glfw
-
-build cmake_object_order_depends_target_glfw: phony || /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/context.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/context.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/init.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/init.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/input.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/input.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/monitor.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/vulkan.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/window.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/window.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_init.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/x11_init.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_init.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_monitor.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/x11_monitor.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_monitor.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_window.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/x11_window.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_window.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/xkb_unicode.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/xkb_unicode.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/xkb_unicode.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/posix_time.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/posix_time.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/posix_time.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/posix_thread.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/posix_thread.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/glx_context.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/glx_context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/glx_context.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/egl_context.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/osmesa_context.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-build /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/linux_joystick.c.o: C_COMPILER__glfw /home/adarsh/projects/glfw/src/linux_joystick.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_USE_CONFIG_H
-  DEP_FILE = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/linux_joystick.c.o.d
-  FLAGS = -g -fPIC   -Wall -std=c99
-  INCLUDES = -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target glfw
-
-
-#############################################
-# Link the static library /home/adarsh/projects/glfw/build/src/libglfw3.a
-
-build /home/adarsh/projects/glfw/build/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/context.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/init.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/input.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/monitor.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/vulkan.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/window.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_init.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_monitor.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_window.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/xkb_unicode.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/posix_time.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/posix_thread.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/glx_context.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/egl_context.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/osmesa_context.c.o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/linux_joystick.c.o
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = /home/adarsh/projects/glfw/build/src/libglfw3.a
-  TARGET_PDB = glfw3.a.dbg
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /home/adarsh/projects/game_test/CMakeLists.txt
-# =============================================================================
-
-
-#############################################
-# Utility command for install/strip
-
-build ../lib/build/CMakeFiles/install/strip.util: CUSTOM_COMMAND ../lib/build/all
-  COMMAND = cd /home/adarsh/projects/game_test/lib/build && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build ../lib/build/install/strip: phony ../lib/build/CMakeFiles/install/strip.util
-
-
-#############################################
-# Utility command for install/local
-
-build ../lib/build/CMakeFiles/install/local.util: CUSTOM_COMMAND ../lib/build/all
-  COMMAND = cd /home/adarsh/projects/game_test/lib/build && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build ../lib/build/install/local: phony ../lib/build/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install
-
-build ../lib/build/CMakeFiles/install.util: CUSTOM_COMMAND ../lib/build/all
-  COMMAND = cd /home/adarsh/projects/game_test/lib/build && /usr/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build ../lib/build/install: phony ../lib/build/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build ../lib/build/list_install_components: phony
 
 
 #############################################
 # Utility command for rebuild_cache
 
 build ../lib/build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/game_test/lib/build && /usr/bin/cmake -S/home/adarsh/projects/game_test -B/home/adarsh/projects/game_test/build
+  COMMAND = cd /workspaces/game_test/lib/build && /usr/bin/cmake -S/workspaces/game_test -B/workspaces/game_test/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -546,7 +171,7 @@ build ../lib/build/rebuild_cache: phony ../lib/build/CMakeFiles/rebuild_cache.ut
 # Utility command for edit_cache
 
 build ../lib/build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/game_test/lib/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /workspaces/game_test/lib/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -586,57 +211,15 @@ build ../lib/build/libglad.a: C_STATIC_LIBRARY_LINKER__glad ../lib/build/CMakeFi
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/adarsh/projects/game_test/CMakeLists.txt
+# /workspaces/game_test/CMakeLists.txt
 # =============================================================================
-
-
-#############################################
-# Utility command for install/strip
-
-build ../lib/glm/build/CMakeFiles/install/strip.util: CUSTOM_COMMAND ../lib/glm/build/all
-  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build ../lib/glm/build/install/strip: phony ../lib/glm/build/CMakeFiles/install/strip.util
-
-
-#############################################
-# Utility command for install/local
-
-build ../lib/glm/build/CMakeFiles/install/local.util: CUSTOM_COMMAND ../lib/glm/build/all
-  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build ../lib/glm/build/install/local: phony ../lib/glm/build/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install
-
-build ../lib/glm/build/CMakeFiles/install.util: CUSTOM_COMMAND ../lib/glm/build/all
-  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build && /usr/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build ../lib/glm/build/install: phony ../lib/glm/build/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build ../lib/glm/build/list_install_components: phony
 
 
 #############################################
 # Utility command for rebuild_cache
 
 build ../lib/glm/build/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build && /usr/bin/cmake -S/home/adarsh/projects/game_test -B/home/adarsh/projects/game_test/build
+  COMMAND = cd /workspaces/game_test/lib/glm/build && /usr/bin/cmake -S/workspaces/game_test -B/workspaces/game_test/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -648,7 +231,7 @@ build ../lib/glm/build/rebuild_cache: phony ../lib/glm/build/CMakeFiles/rebuild_
 # Utility command for edit_cache
 
 build ../lib/glm/build/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /workspaces/game_test/lib/glm/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -656,45 +239,15 @@ build ../lib/glm/build/edit_cache: phony ../lib/glm/build/CMakeFiles/edit_cache.
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/adarsh/projects/game_test/lib/glm/CMakeLists.txt
+# /workspaces/game_test/lib/glm/CMakeLists.txt
 # =============================================================================
-
-
-#############################################
-# Utility command for install/local
-
-build ../lib/glm/build/glm/CMakeFiles/install/local.util: CUSTOM_COMMAND ../lib/glm/build/glm/all
-  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build/glm && /usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build ../lib/glm/build/glm/install/local: phony ../lib/glm/build/glm/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install
-
-build ../lib/glm/build/glm/CMakeFiles/install.util: CUSTOM_COMMAND ../lib/glm/build/glm/all
-  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build/glm && /usr/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build ../lib/glm/build/glm/install: phony ../lib/glm/build/glm/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build ../lib/glm/build/glm/list_install_components: phony
 
 
 #############################################
 # Utility command for rebuild_cache
 
 build ../lib/glm/build/glm/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build/glm && /usr/bin/cmake -S/home/adarsh/projects/game_test -B/home/adarsh/projects/game_test/build
+  COMMAND = cd /workspaces/game_test/lib/glm/build/glm && /usr/bin/cmake -S/workspaces/game_test -B/workspaces/game_test/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -706,36 +259,20 @@ build ../lib/glm/build/glm/rebuild_cache: phony ../lib/glm/build/glm/CMakeFiles/
 # Utility command for edit_cache
 
 build ../lib/glm/build/glm/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build/glm && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /workspaces/game_test/lib/glm/build/glm && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
 build ../lib/glm/build/glm/edit_cache: phony ../lib/glm/build/glm/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for install/strip
-
-build ../lib/glm/build/glm/CMakeFiles/install/strip.util: CUSTOM_COMMAND ../lib/glm/build/glm/all
-  COMMAND = cd /home/adarsh/projects/game_test/lib/glm/build/glm && /usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build ../lib/glm/build/glm/install/strip: phony ../lib/glm/build/glm/CMakeFiles/install/strip.util
 
 # =============================================================================
 # Target aliases.
 
 build glad: phony ../lib/build/libglad.a
 
-build glfw: phony /home/adarsh/projects/glfw/build/src/libglfw3.a
-
 build libglad.a: phony ../lib/build/libglad.a
 
-build libglfw3.a: phony /home/adarsh/projects/glfw/build/src/libglfw3.a
-
-build uninstall: phony /home/adarsh/projects/glfw/build/uninstall
+build lucidity: phony lucidity.js
 
 # =============================================================================
 # Folder targets.
@@ -743,44 +280,30 @@ build uninstall: phony /home/adarsh/projects/glfw/build/uninstall
 # =============================================================================
 
 #############################################
-# Folder: /home/adarsh/projects/game_test/build
+# Folder: /workspaces/game_test/build
 
-build all: phony lucidity /home/adarsh/projects/glfw/build/all ../lib/build/all ../lib/glm/build/all
+build all: phony lucidity.js ../lib/build/all ../lib/glm/build/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/adarsh/projects/game_test/lib/build
+# Folder: /workspaces/game_test/lib/build
 
 build ../lib/build/all: phony ../lib/build/libglad.a
 
 # =============================================================================
 
 #############################################
-# Folder: /home/adarsh/projects/game_test/lib/glm/build
+# Folder: /workspaces/game_test/lib/glm/build
 
 build ../lib/glm/build/all: phony ../lib/glm/build/glm/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/adarsh/projects/game_test/lib/glm/build/glm
+# Folder: /workspaces/game_test/lib/glm/build/glm
 
 build ../lib/glm/build/glm/all: phony
-
-# =============================================================================
-
-#############################################
-# Folder: /home/adarsh/projects/glfw/build
-
-build /home/adarsh/projects/glfw/build/all: phony /home/adarsh/projects/glfw/build/src/all
-
-# =============================================================================
-
-#############################################
-# Folder: /home/adarsh/projects/glfw/build/src
-
-build /home/adarsh/projects/glfw/build/src/all: phony /home/adarsh/projects/glfw/build/src/libglfw3.a
 
 # =============================================================================
 # Built-in targets
@@ -794,14 +317,14 @@ default all
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../lib/CMakeLists.txt ../lib/glm/CMakeLists.txt ../lib/glm/glm/CMakeLists.txt /home/adarsh/projects/glfw/CMake/cmake_uninstall.cmake.in /home/adarsh/projects/glfw/CMake/glfw3.pc.in /home/adarsh/projects/glfw/CMake/glfw3Config.cmake.in /home/adarsh/projects/glfw/CMakeLists.txt /home/adarsh/projects/glfw/src/CMakeLists.txt /home/adarsh/projects/glfw/src/glfw_config.h.in /usr/share/cmake-3.16/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeDependentOption.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindFontconfig.cmake /usr/share/cmake-3.16/Modules/FindFreetype.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/FindX11.cmake /usr/share/cmake-3.16/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake /usr/share/cmake-3.16/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../lib/CMakeLists.txt ../lib/glm/CMakeLists.txt ../lib/glm/glm/CMakeLists.txt /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /workspaces/emsdk/upstream/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake /workspaces/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../lib/CMakeLists.txt ../lib/glm/CMakeLists.txt ../lib/glm/glm/CMakeLists.txt /home/adarsh/projects/glfw/CMake/cmake_uninstall.cmake.in /home/adarsh/projects/glfw/CMake/glfw3.pc.in /home/adarsh/projects/glfw/CMake/glfw3Config.cmake.in /home/adarsh/projects/glfw/CMakeLists.txt /home/adarsh/projects/glfw/src/CMakeLists.txt /home/adarsh/projects/glfw/src/glfw_config.h.in /usr/share/cmake-3.16/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeDependentOption.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakePackageConfigHelpers.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/CheckCSourceCompiles.cmake /usr/share/cmake-3.16/Modules/CheckFunctionExists.cmake /usr/share/cmake-3.16/Modules/CheckIncludeFile.cmake /usr/share/cmake-3.16/Modules/CheckLibraryExists.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/FindFontconfig.cmake /usr/share/cmake-3.16/Modules/FindFreetype.cmake /usr/share/cmake-3.16/Modules/FindPackageHandleStandardArgs.cmake /usr/share/cmake-3.16/Modules/FindPackageMessage.cmake /usr/share/cmake-3.16/Modules/FindPkgConfig.cmake /usr/share/cmake-3.16/Modules/FindThreads.cmake /usr/share/cmake-3.16/Modules/FindX11.cmake /usr/share/cmake-3.16/Modules/GNUInstallDirs.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.16/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.16/Modules/Platform/Linux.cmake /usr/share/cmake-3.16/Modules/Platform/UnixPaths.cmake /usr/share/cmake-3.16/Modules/SelectLibraryConfigurations.cmake /usr/share/cmake-3.16/Modules/WriteBasicConfigVersionFile.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../lib/CMakeLists.txt ../lib/glm/CMakeLists.txt ../lib/glm/glm/CMakeLists.txt /usr/share/cmake-3.16/Modules/CMakeCInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.16/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.16/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.16/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.16/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.16/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.16/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.16/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-C.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang-CXX.cmake /usr/share/cmake-3.16/Modules/Compiler/Clang.cmake /usr/share/cmake-3.16/Modules/Compiler/GNU.cmake /usr/share/cmake-3.16/Modules/Internal/CMakeCheckCompilerFlag.cmake /workspaces/emsdk/upstream/emscripten/cmake/Modules/CMakeSystemSpecificInformation.cmake /workspaces/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake CMakeCache.txt CMakeFiles/3.16.3/CMakeCCompiler.cmake CMakeFiles/3.16.3/CMakeCXXCompiler.cmake CMakeFiles/3.16.3/CMakeSystem.cmake: phony
 
 
 #############################################

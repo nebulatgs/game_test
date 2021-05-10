@@ -1,151 +1,55 @@
 [
 {
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/lucidity.cpp.o -c /home/adarsh/projects/game_test/src/lucidity.cpp",
-  "file": "/home/adarsh/projects/game_test/src/lucidity.cpp"
+  "directory": "/workspaces/game_test/build",
+  "command": "/workspaces/emsdk/upstream/emscripten/em++   -I../lib/include -I../lib/glm -I../lib/glm/glm/..  -g   -std=c++17  -O3 -fexceptions -std=gnu++17 -o CMakeFiles/lucidity.dir/src/lucidity.cpp.o -c /workspaces/game_test/src/lucidity.cpp",
+  "file": "/workspaces/game_test/src/lucidity.cpp"
 },
 
 {
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/shader.cpp.o -c /home/adarsh/projects/game_test/src/shader.cpp",
-  "file": "/home/adarsh/projects/game_test/src/shader.cpp"
+  "directory": "/workspaces/game_test/build",
+  "command": "/workspaces/emsdk/upstream/emscripten/em++   -I../lib/include -I../lib/glm -I../lib/glm/glm/..  -g   -std=c++17  -O3 -fexceptions -std=gnu++17 -o CMakeFiles/lucidity.dir/src/shader.cpp.o -c /workspaces/game_test/src/shader.cpp",
+  "file": "/workspaces/game_test/src/shader.cpp"
 },
 
 {
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/game.cpp.o -c /home/adarsh/projects/game_test/src/game.cpp",
-  "file": "/home/adarsh/projects/game_test/src/game.cpp"
+  "directory": "/workspaces/game_test/build",
+  "command": "/workspaces/emsdk/upstream/emscripten/em++   -I../lib/include -I../lib/glm -I../lib/glm/glm/..  -g   -std=c++17  -O3 -fexceptions -std=gnu++17 -o CMakeFiles/lucidity.dir/src/game.cpp.o -c /workspaces/game_test/src/game.cpp",
+  "file": "/workspaces/game_test/src/game.cpp"
 },
 
 {
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/globals.cpp.o -c /home/adarsh/projects/game_test/src/globals.cpp",
-  "file": "/home/adarsh/projects/game_test/src/globals.cpp"
+  "directory": "/workspaces/game_test/build",
+  "command": "/workspaces/emsdk/upstream/emscripten/em++   -I../lib/include -I../lib/glm -I../lib/glm/glm/..  -g   -std=c++17  -O3 -fexceptions -std=gnu++17 -o CMakeFiles/lucidity.dir/src/globals.cpp.o -c /workspaces/game_test/src/globals.cpp",
+  "file": "/workspaces/game_test/src/globals.cpp"
 },
 
 {
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/stb_image.cpp.o -c /home/adarsh/projects/game_test/src/stb_image.cpp",
-  "file": "/home/adarsh/projects/game_test/src/stb_image.cpp"
+  "directory": "/workspaces/game_test/build",
+  "command": "/workspaces/emsdk/upstream/emscripten/em++   -I../lib/include -I../lib/glm -I../lib/glm/glm/..  -g   -std=c++17  -O3 -fexceptions -std=gnu++17 -o CMakeFiles/lucidity.dir/src/stb_image.cpp.o -c /workspaces/game_test/src/stb_image.cpp",
+  "file": "/workspaces/game_test/src/stb_image.cpp"
 },
 
 {
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/camera.cpp.o -c /home/adarsh/projects/game_test/src/camera.cpp",
-  "file": "/home/adarsh/projects/game_test/src/camera.cpp"
+  "directory": "/workspaces/game_test/build",
+  "command": "/workspaces/emsdk/upstream/emscripten/em++   -I../lib/include -I../lib/glm -I../lib/glm/glm/..  -g   -std=c++17  -O3 -fexceptions -std=gnu++17 -o CMakeFiles/lucidity.dir/src/camera.cpp.o -c /workspaces/game_test/src/camera.cpp",
+  "file": "/workspaces/game_test/src/camera.cpp"
 },
 
 {
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/sprite.cpp.o -c /home/adarsh/projects/game_test/src/sprite.cpp",
-  "file": "/home/adarsh/projects/game_test/src/sprite.cpp"
+  "directory": "/workspaces/game_test/build",
+  "command": "/workspaces/emsdk/upstream/emscripten/em++   -I../lib/include -I../lib/glm -I../lib/glm/glm/..  -g   -std=c++17  -O3 -fexceptions -std=gnu++17 -o CMakeFiles/lucidity.dir/src/sprite.cpp.o -c /workspaces/game_test/src/sprite.cpp",
+  "file": "/workspaces/game_test/src/sprite.cpp"
 },
 
 {
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang++-10   -I../../glfw/include -I../lib/include -I../lib/glm -I/home/adarsh/projects/glfw/include -I../lib/include/KHR -I../lib/glm/glm/..  -g   -std=gnu++17 -o CMakeFiles/lucidity.dir/src/map.cpp.o -c /home/adarsh/projects/game_test/src/map.cpp",
-  "file": "/home/adarsh/projects/game_test/src/map.cpp"
+  "directory": "/workspaces/game_test/build",
+  "command": "/workspaces/emsdk/upstream/emscripten/em++   -I../lib/include -I../lib/glm -I../lib/glm/glm/..  -g   -std=c++17  -O3 -fexceptions -std=gnu++17 -o CMakeFiles/lucidity.dir/src/map.cpp.o -c /workspaces/game_test/src/map.cpp",
+  "file": "/workspaces/game_test/src/map.cpp"
 },
 
 {
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/context.c.o   -c /home/adarsh/projects/glfw/src/context.c",
-  "file": "/home/adarsh/projects/glfw/src/context.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/init.c.o   -c /home/adarsh/projects/glfw/src/init.c",
-  "file": "/home/adarsh/projects/glfw/src/init.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/input.c.o   -c /home/adarsh/projects/glfw/src/input.c",
-  "file": "/home/adarsh/projects/glfw/src/input.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/monitor.c.o   -c /home/adarsh/projects/glfw/src/monitor.c",
-  "file": "/home/adarsh/projects/glfw/src/monitor.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/vulkan.c.o   -c /home/adarsh/projects/glfw/src/vulkan.c",
-  "file": "/home/adarsh/projects/glfw/src/vulkan.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/window.c.o   -c /home/adarsh/projects/glfw/src/window.c",
-  "file": "/home/adarsh/projects/glfw/src/window.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_init.c.o   -c /home/adarsh/projects/glfw/src/x11_init.c",
-  "file": "/home/adarsh/projects/glfw/src/x11_init.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_monitor.c.o   -c /home/adarsh/projects/glfw/src/x11_monitor.c",
-  "file": "/home/adarsh/projects/glfw/src/x11_monitor.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/x11_window.c.o   -c /home/adarsh/projects/glfw/src/x11_window.c",
-  "file": "/home/adarsh/projects/glfw/src/x11_window.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/xkb_unicode.c.o   -c /home/adarsh/projects/glfw/src/xkb_unicode.c",
-  "file": "/home/adarsh/projects/glfw/src/xkb_unicode.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/posix_time.c.o   -c /home/adarsh/projects/glfw/src/posix_time.c",
-  "file": "/home/adarsh/projects/glfw/src/posix_time.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/posix_thread.c.o   -c /home/adarsh/projects/glfw/src/posix_thread.c",
-  "file": "/home/adarsh/projects/glfw/src/posix_thread.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/glx_context.c.o   -c /home/adarsh/projects/glfw/src/glx_context.c",
-  "file": "/home/adarsh/projects/glfw/src/glx_context.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/egl_context.c.o   -c /home/adarsh/projects/glfw/src/egl_context.c",
-  "file": "/home/adarsh/projects/glfw/src/egl_context.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/osmesa_context.c.o   -c /home/adarsh/projects/glfw/src/osmesa_context.c",
-  "file": "/home/adarsh/projects/glfw/src/osmesa_context.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10 -D_GLFW_USE_CONFIG_H -I/home/adarsh/projects/glfw/include -I/home/adarsh/projects/glfw/src -I/home/adarsh/projects/glfw/build/src  -g -fPIC   -Wall -std=c99 -o /home/adarsh/projects/glfw/build/src/CMakeFiles/glfw.dir/linux_joystick.c.o   -c /home/adarsh/projects/glfw/src/linux_joystick.c",
-  "file": "/home/adarsh/projects/glfw/src/linux_joystick.c"
-},
-
-{
-  "directory": "/home/adarsh/projects/game_test/build",
-  "command": "/bin/clang-10  -I../lib/include -I../lib/include/KHR  -g   -o ../lib/build/CMakeFiles/glad.dir/src/glad.c.o   -c /home/adarsh/projects/game_test/lib/src/glad.c",
-  "file": "/home/adarsh/projects/game_test/lib/src/glad.c"
+  "directory": "/workspaces/game_test/build",
+  "command": "/workspaces/emsdk/upstream/emscripten/emcc  -I../lib/include -I../lib/include/KHR  -g   -o ../lib/build/CMakeFiles/glad.dir/src/glad.c.o   -c /workspaces/game_test/lib/src/glad.c",
+  "file": "/workspaces/game_test/lib/src/glad.c"
 }
 ]
