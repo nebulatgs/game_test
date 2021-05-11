@@ -43,14 +43,14 @@ void Game::init(int width, int height, std::string title)
 
 	// Load GL
 	glfwMakeContextCurrent(window);
-	// gladLoadGL();
+	gladLoadGL();
 
 	// Set viewport
 	glfwGetFramebufferSize(window, &this->width, &this->height);
 	glViewport(0, 0, this->width, this->height);
-	// glMatrixMode(GL_PROJECTION);
-	// glLoadIdentity();
-	// glOrtho(0, this->width, this->height, 0, 1, -1);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(0, this->width, this->height, 0, 1, -1);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	// glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
@@ -116,8 +116,8 @@ void Game::draw()
 
 	for (auto &&i : renderObjects)
 	{
-		glm::mat4 scaleTrans = glm::scale(camera.getTransform(), glm::vec3(width / 35, width / 35, 1));
-		i->setTransform(scaleTrans);
+		// glm::mat4 scaleTrans = glm::scale(camera.getTransform(), glm::vec3(width / 35, width / 35, 1));
+		i->setTransform(camera.getTransform());
 		// i->setTextureAtlas(0);
 		// i->update();
 		i->render();
@@ -181,4 +181,8 @@ std::tuple<bool, bool, bool, bool> Game::checkCollision(glm::vec2 position, floa
 	auto intPos = glm::ivec2(position);
 	bool down = collision_map.checkCollision(position);
 	return {0, down, 0, 0};
+}
+glm::ivec2 Game::getMapDims()
+{
+	return {collision_map.width, collision_map.height};
 }

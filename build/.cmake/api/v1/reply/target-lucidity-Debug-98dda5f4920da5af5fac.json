@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "lucidity.js"
+			"path" : "lucidity"
 		}
 	],
 	"backtrace" : 1,
@@ -11,8 +11,8 @@
 		"commands" : 
 		[
 			"add_executable",
-			"include_directories",
-			"target_link_libraries"
+			"target_link_libraries",
+			"include_directories"
 		],
 		"files" : 
 		[
@@ -32,17 +32,35 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 43,
+				"line" : 46,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 44,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
+				"file" : 0,
+				"line" : 42,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 44,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
 				"file" : 0,
 				"line" : 49,
 				"parent" : 0
@@ -58,25 +76,34 @@
 					"fragment" : "-g  "
 				},
 				{
-					"fragment" : "-std=c++17  -O3 -fexceptions"
-				},
-				{
 					"fragment" : "-std=gnu++17"
 				}
 			],
 			"includes" : 
 			[
 				{
+					"backtrace" : 4,
+					"path" : "/home/adarsh/projects/game_test/../glfw/include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/adarsh/projects/game_test/lib/include"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/adarsh/projects/game_test/lib/glm"
+				},
+				{
 					"backtrace" : 2,
-					"path" : "/workspaces/game_test/lib/include"
+					"path" : "/home/adarsh/projects/glfw/include"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "/workspaces/game_test/lib/glm"
+					"path" : "/home/adarsh/projects/game_test/lib/include/KHR"
 				},
 				{
-					"backtrace" : 4,
-					"path" : "/workspaces/game_test/lib/glm/glm/.."
+					"backtrace" : 7,
+					"path" : "/home/adarsh/projects/game_test/lib/glm/glm/.."
 				}
 			],
 			"language" : "CXX",
@@ -94,6 +121,17 @@
 			]
 		}
 	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "glfw::@078f7b8a2177c14c60b2"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "glad::@659822b0c807715f1e89"
+		}
+	],
 	"id" : "lucidity::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
@@ -104,14 +142,40 @@
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-std=c++17 \n\t\t\t\t\t\t-O3\n\t\t\t\t\t\t-flto \n\t\t\t\t\t\t-s ASSERTIONS=1\n\t\t\t\t\t\t\n\t\t\t\t\t\t-s USE_GLFW=3 \n\t\t\t\t\t\t-s MAX_WEBGL_VERSION=2 \n\t\t\t\t\t\t-s MIN_WEBGL_VERSION=2 \n\t\t\t\t\t\t-s WASM=1\n\t\t\t\t\t\t-s TOTAL_MEMORY=256MB \n\t\t\t\t\t\t\n\t\t\t\t\t\t-s ENVIRONMENT=web,worker\n\t\t\t\t\t\t--bind\n\t\t\t\t\t\t--preload-file ../shaders \n\t\t\t\t\t\t--preload-file ../src/images",
+				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/adarsh/projects/glfw/build/src/libglfw3.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "../lib/build/libglad.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "/usr/lib/x86_64-linux-gnu/librt.so",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lm",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-ldl",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
 	"name" : "lucidity",
-	"nameOnDisk" : "lucidity.js",
+	"nameOnDisk" : "lucidity",
 	"paths" : 
 	{
 		"build" : ".",

@@ -24,6 +24,7 @@ public:
 	void draw();
 	void update();
 	void input();
+	glm::ivec2 getMapDims();
 
 	bool closed();
 	std::tuple<bool, bool, bool, bool> checkCollision(glm::vec2 position, float radius);

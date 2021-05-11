@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/game_test
+# Install script for directory: /home/adarsh/projects/game_test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -27,15 +27,21 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
+# Install shared libraries without execute permission?
+if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
+endif()
+
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "TRUE")
+  set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/workspaces/game_test/lib/build/cmake_install.cmake")
-  include("/workspaces/game_test/lib/glm/build/cmake_install.cmake")
+  include("/home/adarsh/projects/glfw/build/cmake_install.cmake")
+  include("/home/adarsh/projects/game_test/lib/build/cmake_install.cmake")
+  include("/home/adarsh/projects/game_test/lib/glm/build/cmake_install.cmake")
 
 endif()
 
@@ -47,5 +53,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/workspaces/game_test/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/adarsh/projects/game_test/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

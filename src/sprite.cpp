@@ -6,6 +6,7 @@ Sprite::Sprite(int width, int height, int mapIndex, Game *game, Shader shader) :
 	initBuffers();
 	this->game = game;
 	textureAtlas = 21;
+	// pos.x = -(static_cast<float>(width) / 3.0f);
 	// vel *= 0.0f;
 }
 
@@ -15,6 +16,7 @@ Sprite::Sprite(int width, int height, int mapIndex, Game *game, const char *vert
 	this->game = game;
 	shader.Compile(vertexPath, fragmentPath);
 	textureAtlas = 2;
+	// pos.x = (game->getMapDims() / -3).x;// - 0.5;
 	// vel *= 0.0f;
 }
 

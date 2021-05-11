@@ -3,7 +3,8 @@
 
 Camera::Camera()
 {
-	transform = glm::mat4(1.0f);
+	transform = glm::mat4(10000.0f);
+	// transform = glm::translate(transform, {28, 0, 0});
 	// pos = glm::vec2(0);
 	vel = glm::vec2(0);
 	acc = glm::vec2(0);
@@ -26,5 +27,5 @@ void Camera::move(glm::vec2 motion)
 
 glm::mat4 Camera::getTransform()
 {
-	return glm::scale(transform, glm::vec3(2, 2, 1));
+	return glm::scale(transform, glm::vec3(39, 39, 1));
 }
