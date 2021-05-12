@@ -6,8 +6,6 @@ Sprite::Sprite(int width, int height, int mapIndex, Game *game, Shader shader) :
 	initBuffers();
 	this->game = game;
 	textureAtlas = 21;
-	// pos.x = -(static_cast<float>(width) / 3.0f);
-	// vel *= 0.0f;
 }
 
 Sprite::Sprite(int width, int height, int mapIndex, Game *game, const char *vertexPath, const char *fragmentPath) : mapIndex(mapIndex), width(width), height(height)
@@ -16,8 +14,6 @@ Sprite::Sprite(int width, int height, int mapIndex, Game *game, const char *vert
 	this->game = game;
 	shader.Compile(vertexPath, fragmentPath);
 	textureAtlas = 2;
-	// pos.x = (game->getMapDims() / -3).x;// - 0.5;
-	// vel *= 0.0f;
 }
 
 void Sprite::initBuffers()
@@ -29,7 +25,6 @@ void Sprite::initBuffers()
 		1.0f, 1.0f, 0.0f};
 
 	GLuint VBO;
-	// GLuint VAO;
 
 	glGenBuffers(1, &VBO);
 
@@ -49,7 +44,6 @@ void Sprite::initBuffers()
 
 void Sprite::setTransform(glm::mat4 transform)
 {
-	// transform = this->transform * transform;
 	transform = glm::scale(transform, glm::vec3((static_cast<float>(width) / static_cast<float>(game->width)), (static_cast<float>(height) / static_cast<float>(game->height)), 1));
 	transform = glm::scale(transform, glm::vec3(0.05, 0.05, 1));
 	transform = glm::translate(transform, {pos / 1.5f, 1.0});
@@ -61,16 +55,24 @@ void Sprite::setTextureAtlas(GLuint atlasID)
 	textureAtlas = atlasID;
 }
 
-std::tuple<bool, bool, bool, bool> Sprite::checkCollision()
+std::tuple<bool, bool, bool, bool> Sprite::checkCollision(glm::vec2 pos)
 {
-	return game->checkCollision(pos, 2);
+	return game->checkCollision(pos, 1);
 }
 
 void Sprite::update()
 {
-	auto collision = checkCollision();
-	vel += acc;
-	pos += vel;
+	auto collision = checkCollision(pos + vel + acc - 2.5f);
+	if (!std::get<1>(collision))
+	{
+		vel.y += acc.y;
+		pos.y += vel.y;
+	}
+	else
+		int a = 1;
+	vel.x += acc.x;
+	pos.x += vel.x;
+	// if((pos + vel).x >= 2.0f || vel.x > 0.0f)
 	vel.x *= 0.6;
 	vel.y *= 0.93;
 	acc.x *= 0.4;
@@ -111,7 +113,6 @@ void Sprite::update()
 
 void Sprite::render()
 {
-	// glActiveTexture(GL_TEXTURE0 + textureAtlas);
 	glBindVertexArray(VAO);
 	shader.Use();
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
@@ -119,13 +120,13 @@ void Sprite::render()
 
 void Sprite::move(float mag)
 {
-	// transform = glm::translate(transform, {motion, 0.0f});
 	acc += glm::vec2(mag, 0.0f);
 }
 
 void Sprite::jump(float mag)
 {
-	if (pos.y <= 4.0f)
+	auto collision = checkCollision(pos + vel + acc - 2.5f);
+	if (std::get<1>(collision) || pos.y <= 4.0f)
 	{
 		vel += glm::vec2(0.0f, mag);
 	}

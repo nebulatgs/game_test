@@ -36,7 +36,7 @@ void Game::init(int width, int height, std::string title)
 
 	// Try to create a window
 	glfwWindowHint(GLFW_SAMPLES, 4);
-	glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+	// glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 	glfwWindowHint(GL_MAJOR_VERSION, 3);
 	glfwWindowHint(GL_MINOR_VERSION, 1);
 	window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
@@ -49,11 +49,10 @@ void Game::init(int width, int height, std::string title)
 
 	// Set viewport
 	glfwGetFramebufferSize(window, &this->width, &this->height);
-	// glViewport(0, 0, this->width, this->height);
-
+	
+	// Alpha
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
-	// glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
 	glClearColor(0.176, 0.204, 0.212, 1.0);
 
 	stbi_set_flip_vertically_on_load(true);
@@ -61,29 +60,33 @@ void Game::init(int width, int height, std::string title)
 	int imgWidth, imgHeight, tilesetWidth, tilesetHeight, nrChannels;
 	GLubyte *data;
 
+	// Load tileset
 	data = stbi_load("../src/images/basic_tiles_big.png", &imgWidth, &imgHeight, &nrChannels, 0);
 	tileset = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
 	tilesetWidth = imgWidth;
 	tilesetHeight = imgHeight;
 
+	// Load level map
 	data = stbi_load("../src/images/another_map4.png", &imgWidth, &imgHeight, &nrChannels, 0);
 	spriteSheet = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
-
-	collision_map = CollisionMap(data, imgWidth, imgHeight);
+	// Generate collision map from level
 	std::shared_ptr map = std::make_shared<Map>(imgWidth, imgHeight, tilesetWidth, tilesetHeight, 0, this, "../shaders/tilemap.vert", "../shaders/tilemap.frag");
 	renderObjects.push_back(map);
+	// Load collider map
+	data = stbi_load("../src/images/another_map4B.png", &imgWidth, &imgHeight, &nrChannels, 1);
+	collision_map = CollisionMap(data, imgWidth, imgHeight, renderObjects, this);
 
+	// Load player texture
 	data = stbi_load("../src/images/Blob.png", &imgWidth, &imgHeight, &nrChannels, 0);
 	playerImg = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
-
+	// Create sprite for player
 	std::shared_ptr sprite = std::make_shared<Sprite>(imgWidth, imgHeight, 0, this, "../shaders/sprite.vert", "../shaders/sprite.frag");
 	renderObjects.push_back(sprite);
 	player = sprite;
 
-	// glm::mat4 scaleTrans = glm::scale(camera.getTransform(), glm::vec3(2));
 	printf("OpenGL version: %s\n", glGetString(GL_VERSION));
 	glfwSwapInterval(1);
 }
@@ -113,15 +116,9 @@ void Game::draw()
 	glClear(GL_COLOR_BUFFER_BIT);
 	int const rotation = glfwGetTime() * 100;
 
-	// glActiveTexture(GL_TEXTURE0);
-	// glBindTexture(GL_TEXTURE_2D, spriteSheet);
 
 	for (auto &&i : renderObjects)
 	{
-		// glm::mat4 scaleTrans = glm::scale(camera.getTransform(), glm::vec3(width / 35, width / 35, 1));
-		i->setTransform(camera.getTransform());
-		// i->setTextureAtlas(0);
-		// i->update();
 		i->render();
 	}
 
@@ -130,31 +127,26 @@ void Game::draw()
 
 void Game::update()
 {
-	// if (player->pos.x + camera.pos.x > 0.0f)
-	// {
-	// 	printf("%f, %f\n", camera.pos.x, player->pos.x);
-	// 	camera.move({-0.004f, 0.0f});
-	// }
-	// if (abs(player->pos.x + (camera.pos.x * 6.0f)) > 5.0f || abs(player->pos.y + (camera.pos.y * 6.0f)) > 5.0f)
-	// {
-	// 	// printf("%f, %f; %f\n", camera.pos.x, player->pos.x, abs(player->pos.x + (camera.pos.x * 6.0f)));
-	// 	camera.move({-1.0f * (glm::normalize(player->pos + (camera.pos * 6.0f)) / 8000.0f)});
-	// }
+	// Follow player
 	if(player->pos.x + (camera.pos.x) < 2.0f)
 	{
-		camera.move({0.1f, 0.0});
+		if(camera.pos.x + 0.1f <= 0.0f)
+			camera.move({0.1f, 0.0});
 	}
-	else if(abs(player->pos.x + (camera.pos.x)) > (360.0f / scale) - 2.0f)
+	else if(abs(player->pos.x + (camera.pos.x)) > ((static_cast<float>(width) / 2.0f)/ scale) - 2.0f)
 	{
-		camera.move({-0.1f, 0.0});
+		if(camera.pos.x - 0.1f >= -(game->getMapDims().x))
+			camera.move({-0.1f, 0.0});
 	}
 
-	printf("%f, %f\n", player->pos.x, camera.pos.x);
+	// printf("%f, %f\n", player->pos.x, camera.pos.x);
+
+	// glfwGetFramebufferSize(window, &this->width, &this->height);
 	camera.update();
 	for (auto &&i : renderObjects)
 	{
+		i->setTransform(camera.getTransform());
 		i->update();
-		// i->render();
 	}
 }
 
@@ -194,6 +186,7 @@ std::tuple<bool, bool, bool, bool> Game::checkCollision(glm::vec2 position, floa
 	bool down = collision_map.checkCollision(position);
 	return {0, down, 0, 0};
 }
+
 glm::ivec2 Game::getMapDims()
 {
 	return {collision_map.width, collision_map.height};

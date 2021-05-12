@@ -27,7 +27,6 @@ void Map::initBuffers()
 		1.0f, 1.0f, 0.0f};
 
 	GLuint VBO;
-	// GLuint VAO;
 
 	glGenBuffers(1, &VBO);
 
@@ -48,9 +47,7 @@ void Map::initBuffers()
 void Map::setTransform(glm::mat4 transform)
 {
 	transform = glm::scale(transform, glm::vec3((static_cast<float>(mapWidth) / static_cast<float>(game->width)), (static_cast<float>(mapHeight) / static_cast<float>(game->height)), 1));
-	// transform = glm::scale(transform, {static_cast<float>(height) / static_cast<float>(width), 1.0f, 1.0f});
 	transform = glm::translate(transform, {1.0, 1.0, 0.0});
-	// this->position = transform;
 	this->transform = transform;
 }
 

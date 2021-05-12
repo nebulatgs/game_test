@@ -20,7 +20,7 @@ public:
 private:
 	void initBuffers();
 	void initTextures();
-	std::tuple<bool, bool, bool, bool> checkCollision();
+	std::tuple<bool, bool, bool, bool> checkCollision(glm::vec2 pos);
 
 private:
 	int width;
