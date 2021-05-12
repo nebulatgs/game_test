@@ -10,7 +10,7 @@ uniform vec2 tile;
 void main()
 {
     gl_Position = transform * vec4(aPos, 1.0); // see how we directly give a vec3 to vec4's constructor
-	gl_Position *= 3.0;
-	gl_Position.x -= 0.5;
+	// gl_Position *= 3.0;
+	// gl_Position.x -= 0.5;
 	TexCoord = aPos.xy + 1.0 + (tile * 2.0);
 }

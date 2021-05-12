@@ -1,19 +1,21 @@
 #include "headers/map.hpp"
 #include "headers/game.hpp"
 
-Map::Map(int width, int height, int mapIndex, Game *game, Shader shader) : mapIndex(mapIndex), shader(shader), width(width), height(height)
+Map::Map(int mapWidth, int mapHeight, int tilesetWidth, int tilesetHeight, int mapIndex, Game *game, Shader shader) : mapIndex(mapIndex), shader(shader), mapWidth(mapWidth), mapHeight(mapHeight), tilesetWidth(tilesetWidth), tilesetHeight(tilesetHeight)
 {
 	initBuffers();
 	this->game = game;
 	textureAtlas = 0;
+	tileSize = 16;
 }
 
-Map::Map(int width, int height, int mapIndex, Game *game, const char *vertexPath, const char *fragmentPath) : mapIndex(mapIndex), width(width), height(height)
+Map::Map(int mapWidth, int mapHeight, int tilesetWidth, int tilesetHeight, int mapIndex, Game *game, const char *vertexPath, const char *fragmentPath) : mapIndex(mapIndex), mapWidth(mapWidth), mapHeight(mapHeight), tilesetWidth(tilesetWidth), tilesetHeight(tilesetHeight)
 {
 	initBuffers();
 	this->game = game;
 	shader.Compile(vertexPath, fragmentPath);
 	textureAtlas = 0;
+	tileSize = 16;
 }
 
 void Map::initBuffers()
@@ -45,8 +47,9 @@ void Map::initBuffers()
 
 void Map::setTransform(glm::mat4 transform)
 {
-	transform = glm::scale(transform, glm::vec3((static_cast<float>(width) / static_cast<float>(game->width)), (static_cast<float>(height) / static_cast<float>(game->height)), 1));
+	transform = glm::scale(transform, glm::vec3((static_cast<float>(mapWidth) / static_cast<float>(game->width)), (static_cast<float>(mapHeight) / static_cast<float>(game->height)), 1));
 	// transform = glm::scale(transform, {static_cast<float>(height) / static_cast<float>(width), 1.0f, 1.0f});
+	transform = glm::translate(transform, {1.0, 1.0, 0.0});
 	// this->position = transform;
 	this->transform = transform;
 }
@@ -61,7 +64,8 @@ void Map::update()
 	shader.SetMatrix4("transform", transform, true);
 	shader.SetInteger("tileset", textureAtlas);
 	shader.SetInteger("tiles", textureAtlas + 1);
-	shader.SetVector2f("imgDims", {width, height});
+	shader.SetVector2f("imgDims", {mapWidth, mapHeight});
+	shader.SetVector2f("tilesetDims", {tilesetWidth / tileSize, tilesetHeight / tileSize});
 }
 
 void Map::render()

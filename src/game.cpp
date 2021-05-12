@@ -24,6 +24,8 @@ Game::Game(int width, int height, std::string title) : camera()
 {
 	init(width, height, title);
 	glfwSetKeyCallback(window, key_callback);
+	scale = 16.0f;
+	camera = Camera(this);
 }
 
 void Game::init(int width, int height, std::string title)
@@ -47,10 +49,8 @@ void Game::init(int width, int height, std::string title)
 
 	// Set viewport
 	glfwGetFramebufferSize(window, &this->width, &this->height);
-	glViewport(0, 0, this->width, this->height);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glOrtho(0, this->width, this->height, 0, 1, -1);
+	// glViewport(0, 0, this->width, this->height);
+
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	glEnable(GL_BLEND);
 	// glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
@@ -58,19 +58,21 @@ void Game::init(int width, int height, std::string title)
 
 	stbi_set_flip_vertically_on_load(true);
 
-	int imgWidth, imgHeight, nrChannels;
+	int imgWidth, imgHeight, tilesetWidth, tilesetHeight, nrChannels;
 	GLubyte *data;
 
-	data = stbi_load("../src/images/basic_tiles.png", &imgWidth, &imgHeight, &nrChannels, 0);
+	data = stbi_load("../src/images/basic_tiles_big.png", &imgWidth, &imgHeight, &nrChannels, 0);
 	tileset = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
+	tilesetWidth = imgWidth;
+	tilesetHeight = imgHeight;
 
 	data = stbi_load("../src/images/another_map4.png", &imgWidth, &imgHeight, &nrChannels, 0);
 	spriteSheet = loadTexture(data, imgWidth, imgHeight);
 	stbi_image_free(data);
 
 	collision_map = CollisionMap(data, imgWidth, imgHeight);
-	std::shared_ptr map = std::make_shared<Map>(imgWidth, imgHeight, 0, this, "../shaders/tilemap.vert", "../shaders/tilemap.frag");
+	std::shared_ptr map = std::make_shared<Map>(imgWidth, imgHeight, tilesetWidth, tilesetHeight, 0, this, "../shaders/tilemap.vert", "../shaders/tilemap.frag");
 	renderObjects.push_back(map);
 
 	data = stbi_load("../src/images/Blob.png", &imgWidth, &imgHeight, &nrChannels, 0);
@@ -133,11 +135,21 @@ void Game::update()
 	// 	printf("%f, %f\n", camera.pos.x, player->pos.x);
 	// 	camera.move({-0.004f, 0.0f});
 	// }
-	if (abs(player->pos.x + (camera.pos.x * 6.0f)) > 5.0f || abs(player->pos.y + (camera.pos.y * 6.0f)) > 5.0f)
+	// if (abs(player->pos.x + (camera.pos.x * 6.0f)) > 5.0f || abs(player->pos.y + (camera.pos.y * 6.0f)) > 5.0f)
+	// {
+	// 	// printf("%f, %f; %f\n", camera.pos.x, player->pos.x, abs(player->pos.x + (camera.pos.x * 6.0f)));
+	// 	camera.move({-1.0f * (glm::normalize(player->pos + (camera.pos * 6.0f)) / 8000.0f)});
+	// }
+	if(player->pos.x + (camera.pos.x) < 2.0f)
 	{
-		// printf("%f, %f; %f\n", camera.pos.x, player->pos.x, abs(player->pos.x + (camera.pos.x * 6.0f)));
-		camera.move({-1.0f * (glm::normalize(player->pos + (camera.pos * 6.0f)) / 80.0f)});
+		camera.move({0.1f, 0.0});
 	}
+	else if(abs(player->pos.x + (camera.pos.x)) > (360.0f / scale) - 2.0f)
+	{
+		camera.move({-0.1f, 0.0});
+	}
+
+	printf("%f, %f\n", player->pos.x, camera.pos.x);
 	camera.update();
 	for (auto &&i : renderObjects)
 	{

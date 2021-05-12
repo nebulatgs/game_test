@@ -52,7 +52,7 @@ void Sprite::setTransform(glm::mat4 transform)
 	// transform = this->transform * transform;
 	transform = glm::scale(transform, glm::vec3((static_cast<float>(width) / static_cast<float>(game->width)), (static_cast<float>(height) / static_cast<float>(game->height)), 1));
 	transform = glm::scale(transform, glm::vec3(0.05, 0.05, 1));
-	transform = glm::translate(transform, {pos, 1.0});
+	transform = glm::translate(transform, {pos / 1.5f, 1.0});
 	this->transform = transform;
 }
 

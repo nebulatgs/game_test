@@ -8,6 +8,7 @@ in vec2 TexCoord;
 uniform sampler2D tiles;
 uniform sampler2D tileset;
 uniform vec2 imgDims;
+uniform vec2 tilesetDims;
 
 void main()
 {
@@ -33,8 +34,11 @@ void main()
 	// {
 	// 	tileOffset = vec2(0.0, 0.0);
 	// }
-	vec4 fractCoords = texture(tileset, (fract(TexCoord * imgDims) / 3.05) + tileOffset / 3.0);
-	FragColor = fractCoords;// * 100.0) / 100.0);
+	vec4 fractCoords = texture(tileset, (fract(TexCoord * imgDims) / (tilesetDims + 0.05) + tileOffset / tilesetDims));
+	// vec4 fractCoords = texture(tiles, TexCoord);
+	FragColor = fractCoords;
+	// FragColor = vec4(TexCoord * imgDims, 0.0, 1.0);// * 100.0) / 100.0);
+	// FragColor = mix(vec4(gl_FragCoord.xy / imgDims, 0.0, 1.0), fractCoords, 0.7);
 	// FragColor = texture(tileset, (FragColor.xy)*10.0);
 	// FragColor = vec4(TexCoord, 0.0, 1.0);
 } 

@@ -38,6 +38,7 @@ public:
 	GLuint tileset;
 	Camera camera;
 	std::shared_ptr<Sprite> player;
+	float scale;
 
 private:
 	GLuint loadTexture(GLubyte *data, int imgWidth, int imgHeight);
