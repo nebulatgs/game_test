@@ -57,12 +57,12 @@ void Sprite::setTextureAtlas(GLuint atlasID)
 
 std::tuple<bool, bool, bool, bool> Sprite::checkCollision(glm::vec2 pos)
 {
-	return game->checkCollision(pos, 1);
+	return game->checkCollision(pos, 2);
 }
 
 void Sprite::update()
 {
-	auto collision = checkCollision(pos + vel + acc - 2.5f);
+	auto collision = checkCollision(pos + vel + acc);
 	if (!std::get<1>(collision))
 	{
 		vel.y += acc.y;
@@ -70,8 +70,11 @@ void Sprite::update()
 	}
 	else
 		int a = 1;
-	vel.x += acc.x;
-	pos.x += vel.x;
+	if(!std::get<3>(collision))
+	{
+		vel.x += acc.x;
+		pos.x += vel.x;
+	}
 	// if((pos + vel).x >= 2.0f || vel.x > 0.0f)
 	vel.x *= 0.6;
 	vel.y *= 0.93;
@@ -125,7 +128,7 @@ void Sprite::move(float mag)
 
 void Sprite::jump(float mag)
 {
-	auto collision = checkCollision(pos + vel + acc - 2.5f);
+	auto collision = checkCollision(pos + vel + acc);
 	if (std::get<1>(collision) || pos.y <= 4.0f)
 	{
 		vel += glm::vec2(0.0f, mag);
